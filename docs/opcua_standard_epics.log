@@ -1,0 +1,205 @@
+make -C ./configure clean 
+make[1]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/configure'
+rm -rf O.linux-x86_64 O.Common
+make[1]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/configure'
+make -C ./devOpcuaSup clean 
+make[1]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/devOpcuaSup'
+rm -rf O.linux-x86_64 O.Common
+make[1]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/devOpcuaSup'
+make -C ./unitTestApp clean 
+make[1]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/unitTestApp'
+make -C ./src clean 
+make[2]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/unitTestApp/src'
+rm -rf O.linux-x86_64 O.Common
+make[2]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/unitTestApp/src'
+make -C ./Db clean 
+make[2]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/unitTestApp/Db'
+rm -rf O.linux-x86_64 O.Common
+make[2]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/unitTestApp/Db'
+make[1]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/unitTestApp'
+make -C ./exampleTop clean 
+make[1]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop'
+make -C ./configure clean 
+make[2]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/configure'
+rm -rf O.linux-x86_64 O.Common
+make[2]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/configure'
+make -C ./TemplateDbSup clean 
+make[2]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/TemplateDbSup'
+make -C ./AnyServerDb clean 
+make[3]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/TemplateDbSup/AnyServerDb'
+rm -rf O.linux-x86_64 O.Common
+make[3]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/TemplateDbSup/AnyServerDb'
+make[2]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/TemplateDbSup'
+make -C ./DeviceDbApp clean 
+make[2]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/DeviceDbApp'
+make -C ./S7-1500Db clean 
+make[3]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/DeviceDbApp/S7-1500Db'
+rm -rf O.linux-x86_64 O.Common
+make[3]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/DeviceDbApp/S7-1500Db'
+make[2]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/DeviceDbApp'
+make -C ./opcuaIocApp clean 
+make[2]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/opcuaIocApp'
+rm -rf O.linux-x86_64 O.Common
+make[2]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/opcuaIocApp'
+make -C ./iocBoot clean 
+make[2]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/iocBoot'
+make -C ./iocopcuaEx clean 
+make[3]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/iocBoot/iocopcuaEx'
+rm -f cdCommands envPaths dllPath.bat relPaths.sh
+make[3]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/iocBoot/iocopcuaEx'
+make[2]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/iocBoot'
+make[1]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop'
+make -C ./configure install 
+make[1]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/configure'
+perl -CSD /home/jhlee/epics_env/epics-base/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../..
+mkdir -p O.Common
+make -C O.linux-x86_64 -f ../Makefile TOP=../.. \
+    T_A=linux-x86_64 install
+make[2]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/configure/O.linux-x86_64'
+perl -CSD /home/jhlee/epics_env/epics-base/bin/linux-x86_64/convertRelease.pl checkRelease
+make[2]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/configure/O.linux-x86_64'
+make[1]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/configure'
+make -C ./devOpcuaSup install 
+make[1]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/devOpcuaSup'
+perl -CSD /home/jhlee/epics_env/epics-base/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../..
+mkdir -p O.Common
+make -C O.linux-x86_64 -f ../Makefile TOP=../.. \
+    T_A=linux-x86_64 install
+make[2]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/devOpcuaSup/O.linux-x86_64'
+perl -CSD /home/jhlee/epics_env/epics-base/bin/linux-x86_64/expandVars.pl -DUASDK="/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk" -DUASDK_DEPLOY_MODE="PROVIDED" -DUASDK_DIR="/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/lib" -DUASDK_USE_CRYPTO="YES" -DUASDK_USE_XMLPARSER="YES" -DEPICS_OPCUA_MAJOR_VERSION="0" -DEPICS_OPCUA_MINOR_VERSION="3" -DEPICS_OPCUA_MAINTENANCE_VERSION="0" -DEPICS_OPCUA_DEVELOPMENT_FLAG="1" -t ../.. -a linux-x86_64   ../devOpcuaVersionNum.h@ ../O.Common/devOpcuaVersionNum.h
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -MM -MF iocshIntegrationUaSdk.d  ../../devOpcuaSup/UaSdk/iocshIntegrationUaSdk.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -MM -MF DataElementUaSdk.d  ../../devOpcuaSup/UaSdk/DataElementUaSdk.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -MM -MF ItemUaSdk.d  ../../devOpcuaSup/UaSdk/ItemUaSdk.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -MM -MF SubscriptionUaSdk.d  ../../devOpcuaSup/UaSdk/SubscriptionUaSdk.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -MM -MF Subscription.d  ../../devOpcuaSup/UaSdk/Subscription.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -MM -MF SessionUaSdk.d  ../../devOpcuaSup/UaSdk/SessionUaSdk.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -MM -MF Session.d  ../../devOpcuaSup/UaSdk/Session.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -MM -MF linkParser.d  ../linkParser.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -MM -MF RecordConnector.d  ../RecordConnector.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -MM -MF DataElement.d  ../DataElement.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -MM -MF iocshIntegration.d  ../iocshIntegration.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -MM -MF devOpcua.d  ../devOpcua.cpp
+Installing CFG file ../../cfg/RULES_OPCUA
+mkdir ../../cfg
+perl -CSD /home/jhlee/epics_env/epics-base/bin/linux-x86_64/expandVars.pl -DUASDK="/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk" -DUASDK_DEPLOY_MODE="PROVIDED" -DUASDK_DIR="/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/lib" -DUASDK_USE_CRYPTO="YES" -DUASDK_USE_XMLPARSER="YES" -DEPICS_OPCUA_MAJOR_VERSION="0" -DEPICS_OPCUA_MINOR_VERSION="3" -DEPICS_OPCUA_MAINTENANCE_VERSION="0" -DEPICS_OPCUA_DEVELOPMENT_FLAG="1" -t ../.. -a linux-x86_64   ../../devOpcuaSup/UaSdk/CONFIG_OPCUA@ ../O.Common/CONFIG_OPCUA
+Installing CFG file ../../cfg/CONFIG_OPCUA
+Installing ../../dbd/devOpcua.dbd
+mkdir ../../dbd
+Installing ../../dbd/opcuaUaSdk.dbd
+Installing ../../dbd/opcua.dbd
+Installing generic include file ../../include/devOpcuaVersion.h
+mkdir ../../include
+Installing generated generic include file ../../include/devOpcuaVersionNum.h
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -c ../devOpcua.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -c ../iocshIntegration.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -c ../DataElement.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -c ../RecordConnector.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -c ../linkParser.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -c ../../devOpcuaSup/UaSdk/Session.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -c ../../devOpcuaSup/UaSdk/SessionUaSdk.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -c ../../devOpcuaSup/UaSdk/Subscription.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -c ../../devOpcuaSup/UaSdk/SubscriptionUaSdk.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -c ../../devOpcuaSup/UaSdk/ItemUaSdk.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -c ../../devOpcuaSup/UaSdk/DataElementUaSdk.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -DUSE_TYPED_RSET -std=c++11  -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../devOpcuaSup -I../../devOpcuaSup/UaSdk -I../../include/compiler/gcc -I../../include/os/Linux -I../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include     -I../../devOpcuaSup/UaSdk  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -c ../../devOpcuaSup/UaSdk/iocshIntegrationUaSdk.cpp
+/usr/bin/ar -rc    libopcua.a        devOpcua.o iocshIntegration.o DataElement.o RecordConnector.o linkParser.o Session.o SessionUaSdk.o Subscription.o SubscriptionUaSdk.o ItemUaSdk.o DataElementUaSdk.o iocshIntegrationUaSdk.o 
+/usr/bin/ranlib libopcua.a
+/usr/bin/g++ -o libopcua.so.0.3 -shared -fPIC -Wl,-hlibopcua.so.0.3 -L/home/jhlee/epics_env/epics-modules/opcua/lib/linux-x86_64 -L/home/jhlee/epics_env/epics-base/lib/linux-x86_64 -L/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/lib -Wl,-rpath,/home/jhlee/epics_env/epics-modules/opcua/lib/linux-x86_64 -Wl,-rpath,/home/jhlee/epics_env/epics-base/lib/linux-x86_64 -Wl,-rpath,/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/lib           -rdynamic -m64            devOpcua.o iocshIntegration.o DataElement.o RecordConnector.o linkParser.o Session.o SessionUaSdk.o Subscription.o SubscriptionUaSdk.o ItemUaSdk.o DataElementUaSdk.o iocshIntegrationUaSdk.o    -ldbRecStd -ldbCore -lca -lCom -luaclientcpp -luapkicpp -luabasecpp -luastack -lxmlparsercpp  -lcrypto -lpthread   -lreadline -lm -lrt -ldl -lgcc
+Installing shared library ../../lib/linux-x86_64/libopcua.so.0.3
+mkdir ../../lib
+mkdir ../../lib/linux-x86_64
+ln -s libopcua.so.0.3 ../../lib/linux-x86_64/libopcua.so
+Installing library ../../lib/linux-x86_64/libopcua.a
+make[2]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/devOpcuaSup/O.linux-x86_64'
+make[1]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/devOpcuaSup'
+make -C ./unitTestApp install 
+make[1]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/unitTestApp'
+make -C ./src install 
+make[2]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/unitTestApp/src'
+perl -CSD /home/jhlee/epics_env/epics-base/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../../..
+mkdir -p O.Common
+make -C O.linux-x86_64 -f ../Makefile TOP=../../.. \
+    T_A=linux-x86_64 install
+make[3]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/unitTestApp/src/O.linux-x86_64'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/unitTestApp/src/O.linux-x86_64'
+make[2]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/unitTestApp/src'
+make -C ./Db install 
+make[2]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/unitTestApp/Db'
+perl -CSD /home/jhlee/epics_env/epics-base/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../../..
+mkdir -p O.Common
+make -C O.linux-x86_64 -f ../Makefile TOP=../../.. \
+    T_A=linux-x86_64 install
+make[3]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/unitTestApp/Db/O.linux-x86_64'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/unitTestApp/Db/O.linux-x86_64'
+make[2]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/unitTestApp/Db'
+make[1]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/unitTestApp'
+make -C ./exampleTop install 
+make[1]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop'
+make -C ./configure install 
+make[2]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/configure'
+perl -CSD /home/jhlee/epics_env/epics-base/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../..
+mkdir -p O.Common
+make -C O.linux-x86_64 -f ../Makefile TOP=../.. \
+    T_A=linux-x86_64 install
+make[3]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/configure/O.linux-x86_64'
+perl -CSD /home/jhlee/epics_env/epics-base/bin/linux-x86_64/convertRelease.pl checkRelease
+make[3]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/configure/O.linux-x86_64'
+make[2]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/configure'
+make -C ./TemplateDbSup install 
+make[2]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/TemplateDbSup'
+make -C ./AnyServerDb install 
+make[3]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/TemplateDbSup/AnyServerDb'
+perl -CSD /home/jhlee/epics_env/epics-base/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../../..
+mkdir -p O.Common
+make -C O.linux-x86_64 -f ../Makefile TOP=../../.. \
+    T_A=linux-x86_64 install
+make[4]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/TemplateDbSup/AnyServerDb/O.linux-x86_64'
+make[4]: Nothing to be done for 'install'.
+make[4]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/TemplateDbSup/AnyServerDb/O.linux-x86_64'
+make[3]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/TemplateDbSup/AnyServerDb'
+make[2]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/TemplateDbSup'
+make -C ./DeviceDbApp install 
+make[2]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/DeviceDbApp'
+make -C ./S7-1500Db install 
+make[3]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/DeviceDbApp/S7-1500Db'
+perl -CSD /home/jhlee/epics_env/epics-base/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../../..
+mkdir -p O.Common
+make -C O.linux-x86_64 -f ../Makefile TOP=../../.. \
+    T_A=linux-x86_64 install
+make[4]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/DeviceDbApp/S7-1500Db/O.linux-x86_64'
+/home/jhlee/epics_env/epics-base/bin/linux-x86_64/msi -D    -I. -I.. -I../O.Common -I../../../db -I/home/jhlee/epics_env/epics-base/db -o ../O.Common/S7-1500-server.db -S../S7-1500-server.substitutions  > S7-1500-server.db.d
+Inflating database from ../S7-1500-server.substitutions 
+/home/jhlee/epics_env/epics-base/bin/linux-x86_64/msi    -I. -I.. -I../O.Common -I../../../db -I/home/jhlee/epics_env/epics-base/db -o S7-1500-server.db -S../S7-1500-server.substitutions 
+Installing created db file ../../../db/S7-1500-server.db
+make[4]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/DeviceDbApp/S7-1500Db/O.linux-x86_64'
+make[3]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/DeviceDbApp/S7-1500Db'
+make[2]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/DeviceDbApp'
+make -C ./opcuaIocApp install 
+make[2]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/opcuaIocApp'
+perl -CSD /home/jhlee/epics_env/epics-base/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../..
+mkdir -p O.Common
+make -C O.linux-x86_64 -f ../Makefile TOP=../.. \
+    T_A=linux-x86_64 install
+make[3]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/opcuaIocApp/O.linux-x86_64'
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -std=c++11  -mtune=generic     -m64  -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I../../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include      -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -MM -MF opcuaIocMain.d  ../opcuaIocMain.cpp
+Creating dbd file opcuaIoc.dbd
+perl -CSD /home/jhlee/epics_env/epics-base/bin/linux-x86_64/dbdExpand.pl   -I. -I.. -I../O.Common -I../../dbd -I../../../dbd -I/home/jhlee/epics_env/epics-base/dbd -o opcuaIoc.dbd base.dbd opcua.dbd
+perl -CSD /home/jhlee/epics_env/epics-base/bin/linux-x86_64/registerRecordDeviceDriver.pl   -I. -I.. -I../O.Common -I../../dbd -I../../../dbd -I/home/jhlee/epics_env/epics-base/dbd    -o opcuaIoc_registerRecordDeviceDriver.cpp ../O.Common/opcuaIoc.dbd opcuaIoc_registerRecordDeviceDriver /home/jhlee/epics_env/epics-modules/opcua/exampleTop
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -std=c++11  -mtune=generic     -m64  -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I../../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include      -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -MM -MF opcuaIoc_registerRecordDeviceDriver.d  opcuaIoc_registerRecordDeviceDriver.cpp
+Installing created dbd file ../../dbd/opcuaIoc.dbd
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -std=c++11  -mtune=generic     -m64  -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I../../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include      -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -c opcuaIoc_registerRecordDeviceDriver.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE           -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall     -std=c++11  -mtune=generic     -m64  -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I../../../include -I/home/jhlee/epics_env/epics-base/include/compiler/gcc -I/home/jhlee/epics_env/epics-base/include/os/Linux -I/home/jhlee/epics_env/epics-base/include      -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uaclientcpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uapkicpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uabasecpp  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/uastack  -I/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/include/xmlparsercpp    -c ../opcuaIocMain.cpp
+/usr/bin/g++ -o opcuaIoc  -L/home/jhlee/epics_env/epics-modules/opcua/lib/linux-x86_64 -L/home/jhlee/epics_env/epics-modules/opcua/exampleTop/lib/linux-x86_64 -L/home/jhlee/epics_env/epics-base/lib/linux-x86_64 -L/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/lib -Wl,-rpath,/home/jhlee/epics_env/epics-modules/opcua/lib/linux-x86_64 -Wl,-rpath,/home/jhlee/epics_env/epics-modules/opcua/exampleTop/lib/linux-x86_64 -Wl,-rpath,/home/jhlee/epics_env/epics-base/lib/linux-x86_64 -Wl,-rpath,/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk/lib           -rdynamic -m64            opcuaIoc_registerRecordDeviceDriver.o opcuaIocMain.o    -lopcua -ldbRecStd -ldbCore -lca -lCom -luaclientcpp -luapkicpp -luabasecpp -luastack -lxmlparsercpp  -lcrypto 
+Installing created executable ../../bin/linux-x86_64/opcuaIoc
+make[3]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/opcuaIocApp/O.linux-x86_64'
+make[2]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/opcuaIocApp'
+make -C ./iocBoot install 
+make[2]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/iocBoot'
+make -C ./iocopcuaEx install 
+make[3]: Entering directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/iocBoot/iocopcuaEx'
+perl -CSD /home/jhlee/epics_env/epics-base/bin/linux-x86_64/convertRelease.pl -t /home/jhlee/epics_env/epics-modules/opcua/exampleTop envPaths
+make[3]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/iocBoot/iocopcuaEx'
+make[2]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop/iocBoot'
+make[1]: Leaving directory '/home/jhlee/epics_env/epics-modules/opcua/exampleTop'

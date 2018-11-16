@@ -1,0 +1,14 @@
+
+>>
+Update Log Time    : 2018Nov16-2333-04CET
+>>
+Script is used     : e3TemplateGenerator
+Script Path        : /home/jhlee/ics_gitsrc/e3-tools/e3TemplateGenerator
+User               : jhlee
+e3 repo Hash       : 6905fdc
+
+EPICS_MODULE_NAME  :                              opcua
+E3 MODULE VERSION  :                             master
+EPICS BASE VERSION :                        base-3.15.5
+E3 REQUIRE VERSION :                              3.0.0
+>>
