@@ -1,5 +1,5 @@
 #
-.PHONY: db hdrs epics epics-clean
+.PHONY: db hdrs epics
 
 db: conf
 	$(QUIET) $(E3_MODULE_MAKE_CMDS) db
@@ -12,9 +12,6 @@ epics:
 	$(QUIET)echo "EPICS_BASE=$(EPICS_BASE)"        > $(TOP)/$(E3_MODULE_SRC_PATH)/configure/RELEASE.local
 	$(QUIET)echo "INSTALL_LOCATION=$(M_OPCUA)"     > $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE.local
 	$(QUIET)echo "UASDK=$(WITH_UASDK_PATH)"       >> $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE.local
+	$(QUIET)echo "UASDK_DEPLOY_MODE = INSTALL"    >> $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE.local
 	$(SUDOBASH) "$(MAKE) -C $(E3_MODULE_SRC_PATH)"
-
-epics-clean:
-	$(SUDOBASH) "$(MAKE) -C $(E3_MODULE_SRC_PATH) clean"
-
 

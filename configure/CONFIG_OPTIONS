@@ -1,10 +1,12 @@
 # The following variable should be in CONFIG_EXPORT
 # However, WITH_% is in CONFIG_EXPORT automatically
 # 
-
-WITH_UASDK_PATH:=/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk
-
-
+#
+WITH_UASDK:=/home/jhlee/private_gitsrc/opcua_1.6.3/linux-src/sdk
+#
+WITH_UASDK_USE_XMLPARSER:=YES
+#
+WITH_UASDK_USE_CRYPTO:=YES
 
 # The definitions shown below can also be placed in an untracked CONFIG_OPTIONS.local
 -include $(TOP)/configure/CONFIG_OPTIONS.local
