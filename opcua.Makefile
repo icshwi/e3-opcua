@@ -33,6 +33,7 @@ EXCLUDE_ARCHS = linux-ppc64e6500
 
 OPCUASRC:=devOpcuaSup
 UASDKSRC:=$(OPCUASRC)/UaSdk
+EXAMPLEDB:=exampleTop/TemplateDbSup/AnyServerDb
 
 USR_INCLUDES += -I$(COMMON_DIR)
 USR_INCLUDES += -I$(where_am_I)$(OPCUASRC)
@@ -65,7 +66,7 @@ USR_INCLUDES += $(foreach lib, $(UASDK_LIBS), -I$(UASDK)/include/$(lib))
 USR_CXXFLAGS_Linux += -std=c++11
 #USR_CXXFLAGS += -DUSE_TYPED_RSET
 
-
+TEMPLATES += $(wildcard $(EXAMPLEDB)/*.template)
 
 # Generic sources and interfaces
 
