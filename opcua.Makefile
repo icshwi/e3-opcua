@@ -17,8 +17,8 @@
 # 
 # Author  : Jeong Han Lee
 # email   : jeonghan.lee@gmail.com
-# Date    : Saturday, November 17 22:17:20 CET 2018
-# version : 0.0.1
+# Date    : Tuesday, November 27 12:11:57 CET 2018
+# version : 0.0.2
 #
 
 ## The following lines are mandatory, please don't change them.
@@ -67,6 +67,7 @@ USR_CXXFLAGS_Linux += -std=c++11
 #USR_CXXFLAGS += -DUSE_TYPED_RSET
 
 TEMPLATES += $(wildcard $(EXAMPLEDB)/*.template)
+TEMPLATES += $(wildcard $(EXAMPLEDB)/*.db)
 
 # Generic sources and interfaces
 
@@ -116,9 +117,34 @@ EXPANDFLAGS += $(foreach var,$(EXPANDVARS),-D$(var)="$(strip $($(var)))")
 $(COMMON_DIR)/devOpcuaVersionNum.h: $(OPCUASRC)/devOpcuaVersionNum.h@
 	$(EXPAND_TOOL) $(EXPANDFLAGS) $($@_EXPANDFLAGS) $< $@
 
-db:
 
-.PHONY: db 
+
+
+USR_DBFLAGS += -I . -I ..
+USR_DBFLAGS += -I $(EPICS_BASE)/db
+USR_DBFLAGS += -I $(EXAMPLEDB)
+
+SUBS=$(wildcard $(EXAMPLEDB)/*.substitutions)
+#TMPS=$(wildcard $(APPDB)/*.template)
+TMPS=
+
+db: $(SUBS) $(TMPS)
+
+$(SUBS):
+	@printf "Inflating database ... %44s >>> %40s \n" "$@" "$(basename $(@)).db"
+	@rm -f  $(basename $(@)).db.d  $(basename $(@)).db
+	$(MSI) -D $(USR_DBFLAGS) -o $(basename $(@)).db -S $@ > $(basename $(@)).db.d
+	$(MSI)    $(USR_DBFLAGS) -o $(basename $(@)).db -S $@
+
+$(TMPS):
+	@printf "Inflating database ... %44s >>> %40s \n" "$@" "$(basename $(@)).db"
+	@rm -f  $(basename $(@)).db.d  $(basename $(@)).db
+	@$(MSI) -D $(USR_DBFLAGS) -o $(basename $(@)).db $@  > $(basename $(@)).db.d
+	@$(MSI)    $(USR_DBFLAGS) -o $(basename $(@)).db $@
+
+
+.PHONY: db $(SUBS) $(TMPS)
+
 
 vlibs: $(VENDOR_LIBS)
 
