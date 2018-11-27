@@ -91,6 +91,12 @@ OPC:CurrentTime                2018-11-27T13:17:10.989Z
 OPC:StartTime                  2018-11-27T13:03:56.234Z
 ```
 
+## Unified Automation Demo Server DB template
+
+* [UA Demo Server DB Template](template/UAopcuaDemoServer.template)
+* Address Space (name space) : ```ns=4```
+* NodeId Identifier string : ```s=Demo.AccessRights.Access_All.All_RW```
+
 
 ## Reference
 

@@ -12,6 +12,7 @@ record(stringin, "$(P)$(R)CurrentTime") {
   field(DTYP, "OPCUA")
   field(INP, "@$(SUBS) i=2258")
 }
+
 record(mbbi, "$(P)$(R)ServerState") {
   field(DTYP, "OPCUA")
   field(INP, "@$(SUBS) i=2259")
@@ -45,7 +46,6 @@ record(longin, "$(P)$(R)CumulatedSubscriptionCount") {
   field(DTYP, "OPCUA")
   field(INP, "@$(SUBS) i=2286")
 }
-
 
 # static information (always read when connecting)
 # 0:ServerStatus/StartTime
