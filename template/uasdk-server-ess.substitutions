@@ -1,7 +1,9 @@
-file opcuaServerInfo.template {
-{ P=$(P=), R=$(R=), SESS=$(SESS) }
+file "opcuaServerInfo.template" {
+pattern { P, R, SESS }
+{ "$(PREF)", "$(REC=)", "$(SESSION)" }
 }
 
-file opcuaServerStats.template {
-{ P=$(P=), R=$(R=), SESS=$(SESS), SUBS=$(SUBS) }
+file "opcuaServerStats.template" {
+pattern { P, R, SESS, SUBS }
+{ "$(PREF)", "$(REC=)", "$(SESSION)", "$(SUBSCRIPT)" }
 }
