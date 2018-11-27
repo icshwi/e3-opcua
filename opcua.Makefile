@@ -117,7 +117,7 @@ EXPANDFLAGS += $(foreach var,$(EXPANDVARS),-D$(var)="$(strip $($(var)))")
 $(COMMON_DIR)/devOpcuaVersionNum.h: $(OPCUASRC)/devOpcuaVersionNum.h@
 	$(EXPAND_TOOL) $(EXPANDFLAGS) $($@_EXPANDFLAGS) $< $@
 
-
+SCRIPTS += $(wildcard ../iocsh/*.iocsh)
 
 
 USR_DBFLAGS += -I . -I ..

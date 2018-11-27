@@ -1,0 +1,18 @@
+#- ###               OPCUA iocsh                    ###
+#- ####################################################
+#- >> Mandatory
+#- SESS           - SESSION NAME
+#- SUBS           - SUBSCRIPTION NAME
+#- INET           - OPCUA SERVER INET
+#- P              - Database PREFIX
+#- >> Optional
+#- PORT           - OPCUA SERVER PORT, Default : 48020
+#- SUBSTIME       - SUBSCRIPTION TIME, Default : 200 ms
+#- R              - Database next prefix, Default : not defined
+#- ####################################################
+
+opcuaCreateSession "$(SESS)" "opc.tcp://$(INET):$(PORT=48020)"
+opcuaCreateSubscription "$(SUBS)" "$(SESS)" "$(SUBSTIME=200)"
+
+dbLoadRecords("opcuaServerInfo.template",   "P=$(P),R=$(R=),SESS=$(SESS)")
+dbLoadRecords("opcuaServerStats.template",  "P=$(P),R=$(R=),SESS=$(SESS),SUBS=$(SUBS)")
