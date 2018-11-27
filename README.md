@@ -101,5 +101,7 @@ OPC:StartTime                  2018-11-27T13:03:56.234Z
 ## Reference
 
 [1] https://www.unified-automation.com/downloads/opc-ua-servers
+
 [2] https://github.com/jeonghanlee/opcua-server
+
 [3] exampleTop/DeviceDbApp/S7-1500-server.substitutions
