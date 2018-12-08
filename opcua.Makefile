@@ -17,8 +17,8 @@
 # 
 # Author  : Jeong Han Lee
 # email   : jeonghan.lee@gmail.com
-# Date    : Tuesday, November 27 12:11:57 CET 2018
-# version : 0.0.2
+# Date    : Saturday, December  8 11:21:13 CET 2018
+# version : 0.0.3
 #
 
 ## The following lines are mandatory, please don't change them.
@@ -31,9 +31,11 @@ include $(where_am_I)/configure/CONFIG_OPCUA_VERSION
 ## Exclude linux-ppc64e6500
 EXCLUDE_ARCHS = linux-ppc64e6500
 
+
 OPCUASRC:=devOpcuaSup
 UASDKSRC:=$(OPCUASRC)/UaSdk
 EXAMPLEDB:=exampleTop/TemplateDbSup/AnyServerDb
+
 
 USR_INCLUDES += -I$(COMMON_DIR)
 USR_INCLUDES += -I$(where_am_I)$(OPCUASRC)
@@ -69,18 +71,6 @@ USR_CXXFLAGS_Linux += -std=c++11
 TEMPLATES += $(wildcard $(EXAMPLEDB)/*.template)
 TEMPLATES += $(wildcard $(EXAMPLEDB)/*.db)
 
-# Generic sources and interfaces
-
-DBDS    += $(OPCUASRC)/devOpcua.dbd
-SOURCES += $(OPCUASRC)/devOpcua.cpp
-SOURCES += $(OPCUASRC)/iocshIntegration.cpp
-SOURCES += $(OPCUASRC)/DataElement.cpp
-SOURCES += $(OPCUASRC)/RecordConnector.cpp
-SOURCES += $(OPCUASRC)/linkParser.cpp
-
-HEADERS += $(OPCUASRC)/devOpcuaVersion.h
-HEADERS += $(COMMON_DIR)/devOpcuaVersionNum.h
-
 
 ifeq ($(T_A),linux-x86_64)
 USR_LDFLAGS += -Wl,--enable-new-dtags
@@ -92,10 +82,11 @@ endif
 
 VENDOR_LIBS += $(foreach lib, $(UASDK_LIBS), $(UASDK)/lib/lib$(lib).so)
 
-DBDS += $(UASDKSRC)/opcuaUaSdk.dbd
-DBDS += $(UASDKSRC)/opcua.dbd
 
+# Generic sources and interfaces
 
+DBDS    += $(UASDKSRC)/opcuaUaSdk.dbd
+DBDS    += $(UASDKSRC)/opcua.dbd
 SOURCES += $(UASDKSRC)/Session.cpp
 SOURCES += $(UASDKSRC)/SessionUaSdk.cpp
 SOURCES += $(UASDKSRC)/Subscription.cpp
@@ -105,7 +96,41 @@ SOURCES += $(UASDKSRC)/DataElementUaSdk.cpp
 SOURCES += $(UASDKSRC)/iocshIntegrationUaSdk.cpp
 
 
-iocshIntegrationUaSdk$(DEP): $(COMMON_DIR)/devOpcuaVersionNum.h
+DBDS    += $(OPCUASRC)/devOpcua.dbd
+SOURCES += $(OPCUASRC)/devOpcua.cpp
+SOURCES += $(OPCUASRC)/iocshIntegration.cpp
+SOURCES += $(OPCUASRC)/RecordConnector.cpp
+SOURCES += $(OPCUASRC)/linkParser.cpp
+
+
+HEADERS += $(OPCUASRC)/devOpcuaVersion.h
+HEADERS += $(COMMON_DIR)/devOpcuaVersionNum.h
+
+
+## xxxRecord.dbd Local Codes 
+DBDINC_SUFF = cpp
+DBDINC_PATH = $(OPCUASRC)
+DBDINC_SRCS = $(DBDINC_PATH)/opcuaItemRecord.$(DBDINC_SUFF)
+
+## xxxRecord.dbd Generic Codes : BEGIN
+DBDINC_DBDS = $(subst .$(DBDINC_SUFF),.dbd,   $(DBDINC_SRCS:$(DBDINC_PATH)/%=%))
+DBDINC_HDRS = $(subst .$(DBDINC_SUFF),.h,     $(DBDINC_SRCS:$(DBDINC_PATH)/%=%))
+DBDINC_DEPS = $(subst .$(DBDINC_SUFF),$(DEP), $(DBDINC_SRCS:$(DBDINC_PATH)/%=%))
+
+HEADERS += $(DBDINC_HDRS)
+SOURCES += $(DBDINC_SRCS)
+
+$(DBDINC_DEPS): $(DBDINC_HDRS)
+
+.dbd.h:
+	$(DBTORECORDTYPEH)  $(USR_DBDFLAGS) -o $@ $<
+
+.PHONY: $(DBDINC_DEPS) .dbd.h
+## Record.dbd Generic codes : END
+
+opcuaItemRecord$(DEP): $(COMMON_DIR)/devOpcuaVersionNum.h
+
+
 
 # Module versioning
 EXPANDVARS  += EPICS_OPCUA_MAJOR_VERSION
@@ -114,10 +139,14 @@ EXPANDVARS  += EPICS_OPCUA_MAINTENANCE_VERSION
 EXPANDVARS  += EPICS_OPCUA_DEVELOPMENT_FLAG
 EXPANDFLAGS += $(foreach var,$(EXPANDVARS),-D$(var)="$(strip $($(var)))")
 
+
+
 $(COMMON_DIR)/devOpcuaVersionNum.h: $(OPCUASRC)/devOpcuaVersionNum.h@
 	$(EXPAND_TOOL) $(EXPANDFLAGS) $($@_EXPANDFLAGS) $< $@
 
 SCRIPTS += $(wildcard ../iocsh/*.iocsh)
+
+
 
 
 USR_DBFLAGS += -I . -I ..
