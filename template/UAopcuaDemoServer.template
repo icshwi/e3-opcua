@@ -44,6 +44,10 @@ record(stringin, "$(P)$(R)ProductUri")
 # SUBS  subscription name
 
 # dynamic information (read on subscription)
+# 000_Static
+# Scalar
+
+# Datatype : Boolean 
 record(bi, "$(P)$(R)StaticScalar_Boolean-RB")
 {
     field(DTYP, "OPCUA")
@@ -66,7 +70,203 @@ record(bo, "$(P)$(R)StaticScalar_Boolean-RB_")
     field( DOL, "$(P)$(R)StaticScalar_Boolean-RB CPP")
     field(OMSL, "closed_loop")
     field( OUT, "$(P)$(R)StaticScalar_Boolean-SP NPP")
+    field(ZNAM, "false")
+    field(ONAM, "true")
 }
+
+# Datatype : Byte
+record(longin, "$(P)$(R)StaticScalar_Byte-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=4;s=Demo.Static.Scalar.Byte")
+    field(SCAN, "I/O Intr")
+}
+
+# DRVH/DRVL force us to set the closest max and min values
+record(longout, "$(P)$(R)StaticScalar_Byte-SP")
+{
+    field(DTYP, "OPCUA")
+    field( OUT, "@$(SUBS) ns=4;s=Demo.Static.Scalar.Byte")
+    field(HOPR, 255)
+    field(LOPR, 0)
+    field(DRVH, 255)
+    field(DRVL, 0)
+}
+
+record(longout, "$(P)$(R)StaticScalar_Byte-RB_")
+{
+    field( DOL, "$(P)$(R)StaticScalar_Byte-RB CPP")
+    field(OMSL, "closed_loop")
+    field( OUT, "$(P)$(R)StaticScalar_Byte-SP NPP")
+}
+
+
+# Datatype : SByte
+record(longin, "$(P)$(R)StaticScalar_SByte-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=4;s=Demo.Static.Scalar.SByte")
+    field(SCAN, "I/O Intr")
+}
+
+# DRVH/DRVL force us to set the closest max and min values
+record(longout, "$(P)$(R)StaticScalar_SByte-SP")
+{
+    field(DTYP, "OPCUA")
+    field( OUT, "@$(SUBS) ns=4;s=Demo.Static.Scalar.SByte")
+    field(HOPR,  127)
+    field(LOPR, -128)
+    field(DRVH,  127)
+    field(DRVL, -128)
+}
+
+record(longout, "$(P)$(R)StaticScalar_SByte-RB_")
+{
+    field( DOL, "$(P)$(R)StaticScalar_SByte-RB CPP")
+    field(OMSL, "closed_loop")
+    field( OUT, "$(P)$(R)StaticScalar_SByte-SP NPP")
+}
+
+
+# Datatype : UInt16
+record(longin, "$(P)$(R)StaticScalar_UInt16-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=4;s=Demo.Static.Scalar.UInt16")
+    field(SCAN, "I/O Intr")
+}
+
+# DRVH/DRVL force us to set the closest max and min values
+record(longout, "$(P)$(R)StaticScalar_UInt16-SP")
+{
+    field(DTYP, "OPCUA")
+    field( OUT, "@$(SUBS) ns=4;s=Demo.Static.Scalar.UInt16")
+    field(HOPR, 65535)
+    field(LOPR, 0)
+    field(DRVH, 65535)
+    field(DRVL, 0)
+}
+
+record(longout, "$(P)$(R)StaticScalar_UInt16-RB_")
+{
+    field( DOL, "$(P)$(R)StaticScalar_UInt16-RB CPP")
+    field(OMSL, "closed_loop")
+    field( OUT, "$(P)$(R)StaticScalar_UInt16-SP NPP")
+}
+
+
+# Datatype : Int16
+record(longin, "$(P)$(R)StaticScalar_Int16-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=4;s=Demo.Static.Scalar.Int16")
+    field(SCAN, "I/O Intr")
+}
+
+# DRVH/DRVL force us to set the closest max and min values
+record(longout, "$(P)$(R)StaticScalar_Int16-SP")
+{
+    field(DTYP, "OPCUA")
+    field( OUT, "@$(SUBS) ns=4;s=Demo.Static.Scalar.Int16")
+    field(HOPR,  32767)
+    field(LOPR, -32768)
+    field(DRVH,  32767)
+    field(DRVL, -32768)
+}
+
+record(longout, "$(P)$(R)StaticScalar_Int16-RB_")
+{
+    field( DOL, "$(P)$(R)StaticScalar_Int16-RB CPP")
+    field(OMSL, "closed_loop")
+    field( OUT, "$(P)$(R)StaticScalar_Int16-SP NPP")
+}
+
+
+
+# Datatype : UInt32
+record(ai, "$(P)$(R)StaticScalar_UInt32-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=4;s=Demo.Static.Scalar.UInt32")
+    field(SCAN, "I/O Intr")
+}
+
+# DRVH/DRVL force us to set the closest max and min values
+record(ao, "$(P)$(R)StaticScalar_UInt32-SP")
+{
+    field(DTYP, "OPCUA")
+    field( OUT, "@$(SUBS) ns=4;s=Demo.Static.Scalar.UInt32")
+    field(HOPR, 4294967295)
+    field(LOPR, 0)
+    field(DRVH, 4294967295)
+    field(DRVL, 0)
+}
+
+record(ao, "$(P)$(R)StaticScalar_UInt32-RB_")
+{
+    field( DOL, "$(P)$(R)StaticScalar_UInt32-RB CPP")
+    field(OMSL, "closed_loop")
+    field( OUT, "$(P)$(R)StaticScalar_UInt32-SP NPP")
+}
+
+
+# Datatype : Int32
+record(ai, "$(P)$(R)StaticScalar_Int32-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=4;s=Demo.Static.Scalar.Int32")
+    field(SCAN, "I/O Intr")
+}
+
+# DRVH/DRVL force us to set the closest max and min values
+record(ao, "$(P)$(R)StaticScalar_Int32-SP")
+{
+    field(DTYP, "OPCUA")
+    field( OUT, "@$(SUBS) ns=4;s=Demo.Static.Scalar.Int32")
+    field(HOPR,  2147483647)
+    field(LOPR, -2147483648)
+    field(DRVH,  2147483647)
+    field(DRVL, -2147483648)
+}
+
+record(ao, "$(P)$(R)StaticScalar_Int32-RB_")
+{
+    field( DOL, "$(P)$(R)StaticScalar_Int32-RB CPP")
+    field(OMSL, "closed_loop")
+    field( OUT, "$(P)$(R)StaticScalar_Int32-SP NPP")
+}
+
+
+
+
+# # Datatype : UInt64
+# record(ai, "$(P)$(R)StaticScalar_UInt64-RB")
+# {
+#     field(DTYP, "OPCUA")
+#     field( INP, "@$(SUBS) ns=4;s=Demo.Static.Scalar.UInt64")
+#     field(SCAN, "I/O Intr")
+# }
+
+# # DRVH/DRVL force us to set the closest max and min values
+# record(ao, "$(P)$(R)StaticScalar_UInt64-SP")
+# {
+#     field(DTYP, "OPCUA")
+#     field( OUT, "@$(SUBS) ns=4;s=Demo.Static.Scalar.UInt64")
+#     field(HOPR, 18446744073709551615)
+#     field(LOPR, 0)
+#     field(DRVH, 18446744073709551615)
+#     field(DRVL, 0)
+# }
+
+# record(ao, "$(P)$(R)StaticScalar_UInt64-RB_")
+# {
+#     field( DOL, "$(P)$(R)StaticScalar_UInt64-RB CPP")
+#     field(OMSL, "closed_loop")
+#     field( OUT, "$(P)$(R)StaticScalar_UInt64-SP NPP")
+# }
+
+
+
 
 # Objects/Demo/000_Static/Dynamic/Boolean
 
