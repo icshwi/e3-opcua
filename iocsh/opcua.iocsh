@@ -7,12 +7,17 @@
 #- P              - Database PREFIX
 #- >> Optional
 #- PORT           - OPCUA SERVER PORT, Default : 48020
-#- SUBSTIME       - SUBSCRIPTION TIME, Default : 200 ms
+#- DEBUG          - SESSION initial level of debuggging, Default : 0
+#- AUTOCONNECT    - Automatically connect/reconnect to server, Default : y
+#-                  YES : y,T,t,T        NO : n,N,f,F        
+#- SUBSTIME       - SUBSCRIPTION Interval, Default : 200 ms
+#- SUBSPRIO       - SUBSCRIPTION Priority, Default : 0 (lowest) [0..255]
+#- SUBSDEBUG      - SUBSCRIPTION DEBUG (0:off, positive number:on), Default : 0
 #- R              - Database next prefix, Default : not defined
 #- ####################################################
 
-opcuaCreateSession "$(SESS)" "opc.tcp://$(INET):$(PORT=48020)"
-opcuaCreateSubscription "$(SUBS)" "$(SESS)" "$(SUBSTIME=200)"
+opcuaCreateSession "$(SESS)" "opc.tcp://$(INET):$(PORT=48020)" "$(DEBUG=0)" "$(AUTOCONNECT=y)"
+opcuaCreateSubscription "$(SUBS)" "$(SESS)" "$(SUBSTIME=200)" "$(SUBPRIO=0)" "$(SUBSDEBUG=0)"
 
 dbLoadRecords("opcuaServerInfo.template",   "P=$(P),R=$(R=),SESS=$(SESS)")
 dbLoadRecords("opcuaServerStats.template",  "P=$(P),R=$(R=),SESS=$(SESS),SUBS=$(SUBS)")

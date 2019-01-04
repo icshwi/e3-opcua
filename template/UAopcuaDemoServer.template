@@ -46,7 +46,6 @@ record(stringin, "$(P)$(R)ProductUri")
 # dynamic information (read on subscription)
 # 000_Static
 # Scalar
-
 # Datatype : Boolean 
 record(bi, "$(P)$(R)StaticScalar_Boolean-RB")
 {
@@ -60,7 +59,7 @@ record(bi, "$(P)$(R)StaticScalar_Boolean-RB")
 record(bo, "$(P)$(R)StaticScalar_Boolean-SP")
 {
     field(DTYP, "OPCUA")
-    field( OUT, "@$(SUBS) ns=4;s=Demo.Static.Scalar.Boolean")
+    field( OUT, "@$(SESS) ns=4;s=Demo.Static.Scalar.Boolean monitor=n")
     field(ZNAM, "false")
     field(ONAM, "true")
 }
@@ -86,7 +85,7 @@ record(longin, "$(P)$(R)StaticScalar_Byte-RB")
 record(longout, "$(P)$(R)StaticScalar_Byte-SP")
 {
     field(DTYP, "OPCUA")
-    field( OUT, "@$(SUBS) ns=4;s=Demo.Static.Scalar.Byte")
+    field( OUT, "@$(SESS) ns=4;s=Demo.Static.Scalar.Byte monitor=n")
     field(HOPR, 255)
     field(LOPR, 0)
     field(DRVH, 255)
@@ -100,7 +99,6 @@ record(longout, "$(P)$(R)StaticScalar_Byte-RB_")
     field( OUT, "$(P)$(R)StaticScalar_Byte-SP NPP")
 }
 
-
 # Datatype : SByte
 record(longin, "$(P)$(R)StaticScalar_SByte-RB")
 {
@@ -113,7 +111,7 @@ record(longin, "$(P)$(R)StaticScalar_SByte-RB")
 record(longout, "$(P)$(R)StaticScalar_SByte-SP")
 {
     field(DTYP, "OPCUA")
-    field( OUT, "@$(SUBS) ns=4;s=Demo.Static.Scalar.SByte")
+    field( OUT, "@$(SESS) ns=4;s=Demo.Static.Scalar.SByte monitor=n")
     field(HOPR,  127)
     field(LOPR, -128)
     field(DRVH,  127)
@@ -140,7 +138,7 @@ record(longin, "$(P)$(R)StaticScalar_UInt16-RB")
 record(longout, "$(P)$(R)StaticScalar_UInt16-SP")
 {
     field(DTYP, "OPCUA")
-    field( OUT, "@$(SUBS) ns=4;s=Demo.Static.Scalar.UInt16")
+    field( OUT, "@$(SESS) ns=4;s=Demo.Static.Scalar.UInt16 monitor=n")
     field(HOPR, 65535)
     field(LOPR, 0)
     field(DRVH, 65535)
@@ -167,7 +165,7 @@ record(longin, "$(P)$(R)StaticScalar_Int16-RB")
 record(longout, "$(P)$(R)StaticScalar_Int16-SP")
 {
     field(DTYP, "OPCUA")
-    field( OUT, "@$(SUBS) ns=4;s=Demo.Static.Scalar.Int16")
+    field( OUT, "@$(SESS) ns=4;s=Demo.Static.Scalar.Int16 monitor=n")
     field(HOPR,  32767)
     field(LOPR, -32768)
     field(DRVH,  32767)
@@ -195,12 +193,13 @@ record(ai, "$(P)$(R)StaticScalar_UInt32-RB")
 record(ao, "$(P)$(R)StaticScalar_UInt32-SP")
 {
     field(DTYP, "OPCUA")
-    field( OUT, "@$(SUBS) ns=4;s=Demo.Static.Scalar.UInt32")
+    field( OUT, "@$(SESS) ns=4;s=Demo.Static.Scalar.UInt32 monitor=n")
     field(HOPR, 4294967295)
     field(LOPR, 0)
     field(DRVH, 4294967295)
     field(DRVL, 0)
 }
+
 
 record(ao, "$(P)$(R)StaticScalar_UInt32-RB_")
 {
@@ -222,12 +221,13 @@ record(ai, "$(P)$(R)StaticScalar_Int32-RB")
 record(ao, "$(P)$(R)StaticScalar_Int32-SP")
 {
     field(DTYP, "OPCUA")
-    field( OUT, "@$(SUBS) ns=4;s=Demo.Static.Scalar.Int32")
+    field( OUT, "@$(SESS) ns=4;s=Demo.Static.Scalar.Int32 monitor=n")
     field(HOPR,  2147483647)
     field(LOPR, -2147483648)
     field(DRVH,  2147483647)
     field(DRVL, -2147483648)
 }
+
 
 record(ao, "$(P)$(R)StaticScalar_Int32-RB_")
 {
@@ -239,8 +239,8 @@ record(ao, "$(P)$(R)StaticScalar_Int32-RB_")
 
 
 
-# # Datatype : UInt64
-# record(ai, "$(P)$(R)StaticScalar_UInt64-RB")
+# # Datatype : UInt16
+# record(int64in, "$(P)$(R)StaticScalar_UInt64-RB")
 # {
 #     field(DTYP, "OPCUA")
 #     field( INP, "@$(SUBS) ns=4;s=Demo.Static.Scalar.UInt64")
@@ -248,17 +248,17 @@ record(ao, "$(P)$(R)StaticScalar_Int32-RB_")
 # }
 
 # # DRVH/DRVL force us to set the closest max and min values
-# record(ao, "$(P)$(R)StaticScalar_UInt64-SP")
+# record(int64out, "$(P)$(R)StaticScalar_UInt64-SP")
 # {
 #     field(DTYP, "OPCUA")
-#     field( OUT, "@$(SUBS) ns=4;s=Demo.Static.Scalar.UInt64")
+#     field( OUT, "@$(SESS) ns=4;s=Demo.Static.Scalar.UInt64 monitor=n")
 #     field(HOPR, 18446744073709551615)
 #     field(LOPR, 0)
 #     field(DRVH, 18446744073709551615)
 #     field(DRVL, 0)
 # }
 
-# record(ao, "$(P)$(R)StaticScalar_UInt64-RB_")
+# record(int64out, "$(P)$(R)StaticScalar_UInt64-RB_")
 # {
 #     field( DOL, "$(P)$(R)StaticScalar_UInt64-RB CPP")
 #     field(OMSL, "closed_loop")
@@ -267,80 +267,129 @@ record(ao, "$(P)$(R)StaticScalar_Int32-RB_")
 
 
 
+# # Datatype : Int64
+# record(int64in, "$(P)$(R)StaticScalar_Int64-RB")
+# {
+#     field(DTYP, "OPCUA")
+#     field( INP, "@$(SUBS) ns=4;s=Demo.Static.Scalar.Int64")
+#     field(SCAN, "I/O Intr")
+# }
 
-# Objects/Demo/000_Static/Dynamic/Boolean
+# # DRVH/DRVL force us to set the closest max and min values
+# record(int64out, "$(P)$(R)StaticScalar_Int64-SP")
+# {
+#     field(DTYP, "OPCUA")
+#     field( OUT, "@$(SESS) ns=4;s=Demo.Static.Scalar.Int64 monitor=n")
+#     field(HOPR,  9223372036854775807)
+#     field(LOPR, -9223372036854775808)
+#     field(DRVH,  9223372036854775807)
+#     field(DRVL, -9223372036854775808)
+# }
 
-record(bi, "$(P)$(R)DynamicScalar_Boolean-RB")
+# record(int64out, "$(P)$(R)StaticScalar_Int64-RB_")
+# {
+#     field( DOL, "$(P)$(R)StaticScalar_Int64-RB CPP")
+#     field(OMSL, "closed_loop")
+#     field( OUT, "$(P)$(R)StaticScalar_Int64-SP NPP")
+# }
+
+
+
+# Datatype : Double / Float
+record(ai, "$(P)$(R)StaticScalar_Double-RB")
 {
     field(DTYP, "OPCUA")
-    field( INP, "@$(SUBS) ns=4;s=Demo.Dynamic.Scalar.Boolean")
-    field(SCAN, "I/O Intr")
-    field(ZNAM, "false")
-    field(ONAM, "true")
-}
-
-record(bo, "$(P)$(R)DynamicScalar_Boolean-SP")
-{
-    field(DTYP, "OPCUA")
-    field( OUT, "@$(SUBS) ns=4;s=Demo.Dynamic.Scalar.Boolean")
-    field(ZNAM, "false")
-    field(ONAM, "true")
-}
-
-
-
-
-## Objects/Demo/005_ACcessRights/Access_All/RO,RW
-record(ai, "$(P)$(R)Access_All_RO-RB")
-{
-    field(DTYP, "OPCUA")
-    field( INP, "@$(SUBS) ns=4;s=Demo.AccessRights.Access_All.All_RO")
-    field(SCAN, "I/O Intr")
-}
-
-record(ai, "$(P)$(R)Access_All_RW-RB")
-{
-    field(DTYP, "OPCUA")
-    field( INP, "@$(SUBS) ns=4;s=Demo.AccessRights.Access_All.All_RW")
+    field( INP, "@$(SUBS) ns=4;s=Demo.Static.Scalar.Double")
     field(SCAN, "I/O Intr")
 }
 
-record(ao, "$(P)$(R)Access_All_RW-SP")
+# DRVH/DRVL force us to set the closest max and min values
+record(ao, "$(P)$(R)StaticScalar_Double-SP")
 {
     field(DTYP, "OPCUA")
-    field( OUT, "@$(SUBS) ns=4;s=Demo.AccessRights.Access_All.All_RW")
+    field( OUT, "@$(SESS) ns=4;s=Demo.Static.Scalar.Double monitor=n")
+    field(HOPR,  2147483647)
+    field(LOPR, -2147483648)
+    field(DRVH,  2147483647)
+    field(DRVL, -2147483648)
 }
+
+
+record(ao, "$(P)$(R)StaticScalar_Double-RB_")
+{
+    field( DOL, "$(P)$(R)StaticScalar_Double-RB CPP")
+    field(OMSL, "closed_loop")
+    field( OUT, "$(P)$(R)StaticScalar_Double-SP NPP")
+}
+
+
+
+
+
+
+# Objects/Demo/000_Static/Dynamic/Double
+# Read/Write
+record(ai, "$(P)$(R)DynamicScalar_Double-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=4;s=Demo.Dynamic.Scalar.Double")
+    field(SCAN, "I/O Intr")
+#    field(PREC, 4)
+}
+
+record(ao, "$(P)$(R)DynamicScalar_Double-SP")
+{
+    field(DTYP, "OPCUA")
+    field( OUT, "@$(SUBS) ns=4;s=Demo.Dynamic.Scalar.Double")
+}
+
+
 
 
 ## Objects/Demo/009_BoilerDemo/Boiler1
-
 ## FillLeverSensor
 ## FillLevel
-record(ai, "$(P)$(R)FillLevel-RB")
+## Double, CurrentRead
+record(ai, "$(P)$(R)Boiler1_FillLevelSensor-RB")
 {
     field(DTYP, "OPCUA")
     field(INP,  "@$(SUBS) ns=4;s=Demo.BoilerDemo.Boiler1.FillLevelSensor.FillLevel")
     field(SCAN, "I/O Intr")
 }
 
-record(ao, "$(P)$(R)FillLevel-SP")
-{
-    field(DTYP, "OPCUA")
-    field(OUT,  "@$(SUBS) ns=4;s=Demo.BoilerDemo.Boiler1.FillLevelSetPoint")
-}
-
-
-
-
-record(ai, "$(P)$(R)ai1")
+record(ai, "$(P)$(R)Boiler1_TemperatureSensor-RB")
 {
     field(DTYP, "OPCUA")
     field(INP,  "@$(SUBS) ns=4;s=Demo.BoilerDemo.Boiler1.TemperatureSensor.Temperature")
     field(SCAN, "I/O Intr")
 }
 
-record(ao, "$(P)$(R)ao1")
-{
-    field(DTYP, "OPCUA")
-    field(OUT,  "@$(SUBS) ns=4;s=Demo.BoilerDemo.Boiler1.TemperatureSensor.Temperature")
-}
+
+
+# record(bo, "$(P)$(R)InfoUpdate-Cmd")
+# {
+#     field(DESC, "Update setting readbacks")
+#     field(ZNAM, "Revert")
+#     field(ONAM, "revert")
+#     field(FLNK, "$(P)$(R)InfoUpdate:1-Fout_")
+#     field(HIGH, "2")
+#     field( VAL, "1")
+#     field(PINI, "YES")
+# }
+
+
+# record(fanout, "$(P)$(R)InfoUpdate:1-Fout_")
+# {
+#     field(LNK1, "$(P)$(R)Boiler1_FillLevelSensor_EGU-RB.PROC")
+# }
+
+
+# #We cannot get the any data, because it is EUInformation Datatype
+# record(stringin, "$(P)$(R)Boiler1_FillLevelSensor_EGU-RB")
+# {
+#   field(DTYP, "OPCUA")
+#   field( INP, "@$(SESS) ns=4;s=Demo.BoilerDemo.Boiler1.FillLevelSensor.FillLevel.EngineeringUnits")
+  
+# }
+
+
