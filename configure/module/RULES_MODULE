@@ -12,7 +12,8 @@ hdrs:
 
 epics:
 	$(QUIET)echo "EPICS_BASE=$(EPICS_BASE)"        > $(TOP)/$(E3_MODULE_SRC_PATH)/configure/RELEASE.local
-	$(QUIET)echo "INSTALL_LOCATION=$(M_OPCUA)"     > $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE.local
+	$(QUIET)echo "CROSS_COMPILER_TARGET_ARCHS="    > $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE.local
+	$(QUIET)echo "INSTALL_LOCATION=$(M_OPCUA)"    >> $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE.local
 	$(QUIET)echo "UASDK=$(WITH_UASDK)"            >> $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE.local
 	$(QUIET)echo "UASDK_DEPLOY_MODE = INSTALL"    >> $(TOP)/$(E3_MODULE_SRC_PATH)/configure/CONFIG_SITE.local
 	$(SUDOBASH) "$(MAKE) -C $(E3_MODULE_SRC_PATH)"
