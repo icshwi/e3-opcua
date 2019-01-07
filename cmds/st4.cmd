@@ -1,6 +1,5 @@
 require iocStats,ae5d083
 
-
 require opcua,0.0.0
 
 epicsEnvSet(TOP, "$(E3_CMD_TOP)/..")
@@ -12,7 +11,7 @@ epicsEnvSet("OPCSERVER", "127.0.0.1")
 loadIocsh("iocStats.iocsh", "IOCNAME=$(SESSION):$(SUBSCRIPT)")
 iocshLoad("$(TOP)/iocsh/opcua.iocsh", "P=OPC:,SESS=$(SESSION),SUBS=$(SUBSCRIPT),INET=$(OPCSERVER), DEBUG=1, SUBSDEBUG=0")
 
-dbLoadRecords("$(TOP)/template/UAopcuaDemoServer.template", "P=OPC:,R=Demo:,SESS=$(SESSION),SUBS=$(SUBSCRIPT)")
+dbLoadRecords("$(TOP)/template/UaOpcUaAnsiCDemoServer.template", "P=OPC:,R=Demo:,SESS=$(SESSION),SUBS=$(SUBSCRIPT)")
 
 
 iocInit()

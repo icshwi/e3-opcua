@@ -11,7 +11,7 @@ opcuaCreateSubscription $(SUBSCRIPT) $(SESSION) 200
 #dbLoadRecords("uasdk-server-ess.db","P=OPC:,R=,SESS=$(SESSION),SUBS=$(SUBSCRIPT)")
 dbLoadRecords("opcuaServerInfo.template",   "P=OPC:,R=,SESS=$(SESSION)")
 dbLoadRecords("opcuaServerStats.template",  "P=OPC:,R=,SESS=$(SESSION),SUBS=$(SUBSCRIPT)")
-dbLoadRecords("$(TOP)/template/UAopcuaDemoServer.template", "P=OPC:,R=,SESS=$(SESSION),SUBS=$(SUBSCRIPT)")
+dbLoadRecords("$(TOP)/template/UaOpcUaAnsiCDemoServer.template", "P=OPC:,R=,SESS=$(SESSION),SUBS=$(SUBSCRIPT)")
 
 
 iocInit()
