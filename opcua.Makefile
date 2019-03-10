@@ -18,7 +18,7 @@
 # Author  : Jeong Han Lee
 # email   : jeonghan.lee@gmail.com
 # Date    : Saturday, December  8 11:21:13 CET 2018
-# version : 0.0.3
+# version : 0.4.0
 #
 
 ## The following lines are mandatory, please don't change them.
@@ -59,9 +59,13 @@ endif
 
 # Depending on SDK version, C++ modules may have a 'cpp' suffix
 UASDK_LIBS = $(notdir $(wildcard $(foreach module, $(UASDK_MODULES), \
-    $(UASDK)/include/$(module) $(UASDK)/include/$(module)cpp)))
+     $(UASDK)/include/$(module) $(UASDK)/include/$(module)cpp)))
 
 USR_INCLUDES += $(foreach lib, $(UASDK_LIBS), -I$(UASDK)/include/$(lib))
+#
+# e3 only supports INSTALL in $(UASDK_DEPLOY_MODE)
+# it is not necessary to implement them.
+# 
 ### END ### RULES_OPCUA
 
 
@@ -83,10 +87,15 @@ endif
 VENDOR_LIBS += $(foreach lib, $(UASDK_LIBS), $(UASDK)/lib/lib$(lib).so)
 
 
-# Generic sources and interfaces
-
+# # Generic sources and interfaces
+# BEGIN : $(UASDKSRC)/Makefile
 DBDS    += $(UASDKSRC)/opcuaUaSdk.dbd
 DBDS    += $(UASDKSRC)/opcua.dbd
+# opcua.dbd has
+#               opcuaItemRecord.dbd
+#               devOpcua.dbd
+#               opcuaUaSdk.dbd
+#
 SOURCES += $(UASDKSRC)/Session.cpp
 SOURCES += $(UASDKSRC)/SessionUaSdk.cpp
 SOURCES += $(UASDKSRC)/Subscription.cpp
@@ -94,43 +103,37 @@ SOURCES += $(UASDKSRC)/SubscriptionUaSdk.cpp
 SOURCES += $(UASDKSRC)/ItemUaSdk.cpp
 SOURCES += $(UASDKSRC)/DataElementUaSdk.cpp
 SOURCES += $(UASDKSRC)/iocshIntegrationUaSdk.cpp
+# END   : $(UASDKSRC)/Makefile
 
 
-DBDS    += $(OPCUASRC)/devOpcua.dbd
+# BEGIN : $(OPCUASRC)/Makefile
 SOURCES += $(OPCUASRC)/devOpcua.cpp
 SOURCES += $(OPCUASRC)/iocshIntegration.cpp
 SOURCES += $(OPCUASRC)/RecordConnector.cpp
 SOURCES += $(OPCUASRC)/linkParser.cpp
-
+SOURCES += $(OPCUASRC)/opcuaItemRecord.cpp
+#
+# devOpcua.dbd is COMMON_ASSEMBELIES, and
+# generated within COMMON. So, e3 needs the ugly
+# method to generate the file
+# 
+DBDS    += $(COMMON_DIR)/devOpcua.dbd
+DBDS    += $(OPCUASRC)/opcuaItemRecord.dbd
 
 HEADERS += $(OPCUASRC)/devOpcuaVersion.h
+HEADERS += $(COMMON_DIR)/opcuaItemRecord.h
 HEADERS += $(COMMON_DIR)/devOpcuaVersionNum.h
 
 
-## xxxRecord.dbd Local Codes 
-DBDINC_SUFF = cpp
-DBDINC_PATH = $(OPCUASRC)
-DBDINC_SRCS = $(DBDINC_PATH)/opcuaItemRecord.$(DBDINC_SUFF)
+## Need to define the absolute path, because driver.Makefile
+## doesn't know where these files are.
+## 
+ifdef BASE_3_16
+devOpcua.dbd_SNIPPETS += $(where_am_I)$(OPCUASRC)/10_devOpcuaInt64.dbd
+endif
+devOpcua.dbd_SNIPPETS += $(where_am_I)$(OPCUASRC)/20_devOpcuaAll.dbd
 
-## xxxRecord.dbd Generic Codes : BEGIN
-DBDINC_DBDS = $(subst .$(DBDINC_SUFF),.dbd,   $(DBDINC_SRCS:$(DBDINC_PATH)/%=%))
-DBDINC_HDRS = $(subst .$(DBDINC_SUFF),.h,     $(DBDINC_SRCS:$(DBDINC_PATH)/%=%))
-DBDINC_DEPS = $(subst .$(DBDINC_SUFF),$(DEP), $(DBDINC_SRCS:$(DBDINC_PATH)/%=%))
-
-HEADERS += $(DBDINC_HDRS)
-SOURCES += $(DBDINC_SRCS)
-
-$(DBDINC_DEPS): $(DBDINC_HDRS)
-
-.dbd.h:
-	$(DBTORECORDTYPEH)  $(USR_DBDFLAGS) -o $@ $<
-
-.PHONY: $(DBDINC_DEPS) .dbd.h
-## Record.dbd Generic codes : END
-
-opcuaItemRecord$(DEP): $(COMMON_DIR)/devOpcuaVersionNum.h
-
-
+opcuaItemRecord$(DEP): $(COMMON_DIR)/devOpcuaVersionNum.h $(COMMON_DIR)/opcuaItemRecord.h $(COMMON_DIR)/devOpcua.dbd
 
 # Module versioning
 EXPANDVARS  += EPICS_OPCUA_MAJOR_VERSION
@@ -140,9 +143,17 @@ EXPANDVARS  += EPICS_OPCUA_DEVELOPMENT_FLAG
 EXPANDFLAGS += $(foreach var,$(EXPANDVARS),-D$(var)="$(strip $($(var)))")
 
 
-
-$(COMMON_DIR)/devOpcuaVersionNum.h: $(OPCUASRC)/devOpcuaVersionNum.h@
+$(COMMON_DIR)/devOpcuaVersionNum.h: $(where_am_I)$(OPCUASRC)/devOpcuaVersionNum.h@
 	$(EXPAND_TOOL) $(EXPANDFLAGS) $($@_EXPANDFLAGS) $< $@
+
+$(COMMON_DIR)/opcuaItemRecord.h: $(where_am_I)$(OPCUASRC)/opcuaItemRecord.dbd
+	$(DBTORECORDTYPEH) $(USR_DBDFLAGS) -o $@ $<
+
+$(COMMON_DIR)/devOpcua.dbd: $(devOpcua.dbd_SNIPPETS)
+	$(ASSEMBLE_TOOL) -o $@ $<
+
+# END : $(OPCUASRC)/Makefile
+
 
 SCRIPTS += $(wildcard ../iocsh/*.iocsh)
 
