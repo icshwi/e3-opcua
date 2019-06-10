@@ -8,7 +8,7 @@ ESS Site-specific EPICS module : opcua
 
 * Debian OS
 ```
-apt install libssl-dev  libxml2-dev 
+apt install libssl-dev  libxml2-dev  cmake
 ```
 
 * Build SDK with SHARED_LIBS
