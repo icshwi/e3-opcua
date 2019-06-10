@@ -1,5 +1,5 @@
 #
-#  Copyright (c) 2018 - Present  European Spallation Source ERIC
+#  Copyright (c) 2018 - 2019  European Spallation Source ERIC
 #
 #  The program is free software: you can redistribute
 #  it and/or modify it under the terms of the GNU General Public License
@@ -17,8 +17,8 @@
 # 
 # Author  : Jeong Han Lee
 # email   : jeonghan.lee@gmail.com
-# Date    : Saturday, December  8 11:21:13 CET 2018
-# version : 0.4.0
+# Date    : Monday, June 10 17:28:22 CEST 2019
+# version : 0.4.1
 #
 
 ## The following lines are mandatory, please don't change them.
@@ -30,7 +30,7 @@ include $(where_am_I)/configure/CONFIG_OPCUA_VERSION
 
 ## Exclude linux-ppc64e6500
 EXCLUDE_ARCHS = linux-ppc64e6500
-
+EXCLUDE_ARCHS += linux-corei7-poky
 
 OPCUASRC:=devOpcuaSup
 UASDKSRC:=$(OPCUASRC)/UaSdk
