@@ -1,0 +1,13 @@
+require opcua,0.4.0
+
+epicsEnvSet(TOP, "$(E3_CMD_TOP)/..")
+
+epicsEnvSet("SESSION",   "OPC00")
+epicsEnvSet("SUBSCRIPT", "S7PLC")
+epicsEnvSet("OPCSERVER", "192.168.0.1")
+iocshLoad("$(TOP)/iocsh/opcua.iocsh", "P=OPC:,SESS=$(SESSION),SUBS=$(SUBSCRIPT),INET=$(OPCSERVER), PORT=4840, DEBUG=1, SUBSDEBUG=0")
+
+iocInit()
+
+dbl > "$(TOP)/$(SESSION)_PVs.list"
+
