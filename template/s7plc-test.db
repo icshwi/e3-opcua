@@ -1,0 +1,57 @@
+
+# A pair of bi/bo working on a Boolean data item
+record(bi, "$(P)$(R)opc1i")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"Data_block_1\".\"OPC1\"")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "false")
+    field(ONAM, "true")
+}
+
+record(bo, "$(P)$(R)opc1o")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"Data_block_1\".\"OPC1\"")
+    field(ZNAM, "false")
+    field(ONAM, "true")
+}
+
+
+record(bi, "$(P)$(R)opc2i")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"Data_block_1\".\"OPC2\"")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "false")
+    field(ONAM, "true")
+}
+
+
+record(bo, "$(P)$(R)opc2o")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"Data_block_1\".\"OPC2\"")
+    field(ZNAM, "false")
+    field(ONAM, "true")
+}
+
+
+record(bi, "$(P)$(R)opc3i")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"Data_block_1\".\"OPC3\"")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "false")
+    field(ONAM, "true")
+}
+
+
+record(bo, "$(P)$(R)opc3o")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"Data_block_1\".\"OPC3\"")
+    field(ZNAM, "false")
+    field(ONAM, "true")
+}
+
