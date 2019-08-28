@@ -1,0 +1,36 @@
+# OPC UA Generic Server (namespace 0, http://opcfoundation.org/UA)
+# Server information
+# Macros:
+# P     device prefix
+# R     device suffix
+# SESS  session name
+
+# static information (always read when connecting)
+# 
+# Additional Info in opcuaServerInfo.template
+# 0:ServerStatus/BuildInfo
+record(stringin, "$(P)$(R)BuildData")
+{
+  field(DTYP, "OPCUA")
+  field( INP, "@$(SESS) i=2266")
+}
+
+record(stringin, "$(P)$(R)BuildNumber")
+{
+  field(DTYP, "OPCUA")
+  field( INP, "@$(SESS) i=2265")
+}
+
+record(stringin, "$(P)$(R)ProductName")
+{
+  field(DTYP, "OPCUA")
+  field( INP, "@$(SESS) i=2261")
+}
+
+record(stringin, "$(P)$(R)ProductUri")
+{
+  field(DTYP, "OPCUA")
+  field( INP, "@$(SESS) i=2262")
+}
+
+

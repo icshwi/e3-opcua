@@ -1,0 +1,33 @@
+
+
+# Datatype : Double
+record(ai, "$(P)$(R)Random-Int4-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=2;s=0:Random.Int4")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)APL-P-1-J1-U01-S-10-Breaker-position-indication-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=6;s=0:\\\\APL\\1\\P\\J1_U01_S\\10")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)APL-P-B-HDS-10-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=6;s=0:\\\\APL\\1\\P\\J1_U01_M2\\16")
+    field(SCAN, "I/O Intr")
+}
+
+
+record(ai, "$(P)$(R)APL-P-1-J1-U01-M-10-Current-L1-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=6;s=0:\\\\APL\\1\\P\\J1_U01_M\\10")
+    field(SCAN, "I/O Intr")
+}
+
+
