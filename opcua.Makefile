@@ -17,8 +17,8 @@
 # 
 # Author  : Jeong Han Lee
 # email   : jeonghan.lee@gmail.com
-# Date    : Monday, June 10 17:28:22 CEST 2019
-# version : 0.4.1
+# Date    : Wednesday, September 18 14:26:31 CEST 2019
+# version : 0.4.2
 #
 
 ## The following lines are mandatory, please don't change them.
@@ -48,10 +48,11 @@ UASDK_USE_XMLPARSER:=$(WITH_UASDK_USE_XMLPARSER)
 UASDK_USE_CRYPTO:=$(WITH_UASDK_USE_CRYPTO)
 
 
-### START ### RULES_OPCUA
+### START ### RULES_OPCUA in devOpcuaSup/UaSdk
 UASDK_MODULES = uaclient uapki uabase uastack
 ifeq ($(UASDK_USE_XMLPARSER),YES)
 UASDK_MODULES += xmlparser
+USR_SYS_LIBS_Linux += xml2
 endif
 ifeq ($(UASDK_USE_CRYPTO),YES)
 USR_SYS_LIBS += crypto
