@@ -4,6 +4,15 @@ e3-opcua
 ESS Site-specific EPICS module : opcua
 
 
+## Dependency Plot
+
+|![opcua dep](docs/opcua.png)|
+| :---: |
+|**Figure 1** Depdendency Tree. |
+
+
+
+
 ## Unified Automation OPC UA C++ SDK Configuration
 
 * Debian OS
