@@ -1,5 +1,5 @@
 
-include $(REQUIRE_CONFIG)/RULES_SITEAPPS
+include $(REQUIRE_CONFIG)/RULES_SITEMODS
 include $(REQUIRE_CONFIG)/RULES_EPICS
 
 include $(TOP)/configure/module/RULES_MODULE
