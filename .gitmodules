@@ -1,4 +1,4 @@
 [submodule "opcua"]
 	path = opcua
 	url = https://github.com/ralphlange/opcua
-	ignore = dirty
+	branch = release/0.5
