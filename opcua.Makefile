@@ -17,8 +17,8 @@
 # 
 # Author  : Jeong Han Lee
 # email   : jeonghan.lee@gmail.com
-# Date    : Wednesday, September 18 14:26:31 CEST 2019
-# version : 0.4.2
+# Date    : Tuesday, October  1 23:48:57 CEST 2019
+# version : 0.4.3
 #
 
 ## The following lines are mandatory, please don't change them.
@@ -128,11 +128,14 @@ HEADERS += $(COMMON_DIR)/devOpcuaVersionNum.h
 
 ## Need to define the absolute path, because driver.Makefile
 ## doesn't know where these files are.
-## 
+##
+
 ifdef BASE_3_16
 devOpcua.dbd_SNIPPETS += $(where_am_I)$(OPCUASRC)/10_devOpcuaInt64.dbd
 endif
+
 devOpcua.dbd_SNIPPETS += $(where_am_I)$(OPCUASRC)/20_devOpcuaAll.dbd
+
 
 opcuaItemRecord$(DEP): $(COMMON_DIR)/devOpcuaVersionNum.h $(COMMON_DIR)/opcuaItemRecord.h $(COMMON_DIR)/devOpcua.dbd
 
@@ -151,7 +154,7 @@ $(COMMON_DIR)/opcuaItemRecord.h: $(where_am_I)$(OPCUASRC)/opcuaItemRecord.dbd
 	$(DBTORECORDTYPEH) $(USR_DBDFLAGS) -o $@ $<
 
 $(COMMON_DIR)/devOpcua.dbd: $(devOpcua.dbd_SNIPPETS)
-	$(ASSEMBLE_TOOL) -o $@ $<
+	$(ASSEMBLE_TOOL) -o $@ $^
 
 # END : $(OPCUASRC)/Makefile
 

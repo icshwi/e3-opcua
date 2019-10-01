@@ -4,9 +4,9 @@ epicsEnvSet(TOP, "$(E3_CMD_TOP)/..")
 
 epicsEnvSet("SESSION",   "OPC1")
 epicsEnvSet("SUBSCRIPT", "SUB1")
-#epicsEnvSet("OPCSERVER", "127.0.0.1")
+epicsEnvSet("OPCSERVER", "127.0.0.1")
 #epicsEnvSet("OPCSERVER", "10.0.6.32")
-epicsEnvSet("OPCSERVER", "proton")
+#epicsEnvSet("OPCSERVER", "proton")
 
 iocshLoad("$(TOP)/iocsh/opcua.iocsh", "P=OPC:,SESS=$(SESSION),SUBS=$(SUBSCRIPT),INET=$(OPCSERVER), DEBUG=1, SUBSDEBUG=0")
 
