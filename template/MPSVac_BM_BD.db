@@ -1,0 +1,30 @@
+#MPSVac Beam Modes and Beam Destinations
+#From EPICS to MPSVac: A master IOC should provide Beam Configuration PVs to which MPSVac should subscribe
+record(ao, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-Bm")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbBMode_BDest\".\"EPICS_MPSVac:BConfig_Req\".\"BMode_Val\"")
+    field(DESC, "Requested Beam Mode")
+}
+record(ao, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-Bd")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbBMode_BDest\".\"EPICS_MPSVac:BConfig_Req\".\"BDest_Val\"")
+    field(DESC, "Requested Beam Destination")
+}
+
+#From MPSVac to EPICS: MPSVac shows its configuration
+record(ai, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-BmR")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbBMode_BDest\".\"MPSVac_EPICS:BConfig\".\"BMode_Val\"")
+    field(SCAN, "I/O Intr")    
+    field(DESC, "Configured Beam Mode")
+}
+record(ai, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-BdR")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbBMode_BDest\".\"MPSVac_EPICS:BConfig\".\"BDest_Val\"")
+    field(SCAN, "I/O Intr")    
+    field(DESC, "Configured Beam Destination")
+}

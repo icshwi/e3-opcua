@@ -1,0 +1,162 @@
+#MPSVac FBIS interface
+#From MPSVac to FBIS. EPICS just reads.
+#BPs and RDYs signals
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-BP1En")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbFBIS_Interface\".\"MPSVac_FBIS_FIO\".\"MPSBP1_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "BP1 Ok")
+    field(ZNAM, "BP1 Not Ok")
+    field(DESC, "MPSVac to FBIS Hardwired BP1")
+}
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-BP2En")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbFBIS_Interface\".\"MPSVac_FBIS_FIO\".\"MPSBP2_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "BP1 Ok")
+    field(ZNAM, "BP1 Not Ok")
+    field(DESC, "MPSVac to FBIS Hardwired BP2")
+}
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-Rdy1En")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbFBIS_Interface\".\"MPSVac_FBIS_FIO\".\"MPSRdy1_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "RDY1 Ok")
+    field(ZNAM, "RDY1 Not Ok")
+    field(DESC, "MPSVac to FBIS Hardwired RDY1")
+}
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-Rdy2En")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbFBIS_Interface\".\"MPSVac_FBIS_FIO\".\"MPSRdy2_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "RDY2 Ok")
+    field(ZNAM, "RDY2 Not Ok")
+    field(DESC, "MPSVac to FBIS Hardwired RDY2")
+}
+#Status info of the above signals
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-BP1Stat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbFBIS_Interface\".\"MPSVac_FBIS_FIO\".\"MPSBP1_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "BP1 Stat. Ok")
+    field(ZNAM, "BP1 Stat. Not Ok")
+    field(DESC, "MPSVac->FBIS Hard.Stat.BP1")
+}
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-BP2Stat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbFBIS_Interface\".\"MPSVac_FBIS_FIO\".\"MPSBP2_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "BP2 Stat. Ok")
+    field(ZNAM, "BP2 Stat. Not Ok")
+    field(DESC, "MPSVac->FBIS Hard.Stat.BP2")
+}
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-Rdy1Stat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbFBIS_Interface\".\"MPSVac_FBIS_FIO\".\"MPSRdy1_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "RDY1 Stat. Ok")
+    field(ZNAM, "RDY1 Stat. Not Ok")
+    field(DESC, "MPSVac->FBIS Hard.Stat.RDY1")
+}
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-Rdy2Stat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbFBIS_Interface\".\"MPSVac_FBIS_FIO\".\"MPSRdy2_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "RDY2 Stat. Ok")
+    field(ZNAM, "RDY2 Stat. Not Ok")
+    field(DESC, "MPSVac->FBIS Hard.Stat.RDY2")
+}
+#Cable connection for BP1&RDY1 cable and BP2&RDY2 cable
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-BPR1CableEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbFBIS_Interface\".\"MPSVac_FBIS_FIO\".\"MPSBP_CH1_MPSRdy_CH1_CblCnnct\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Cable connected")
+    field(ZNAM, "Cable disconnected")
+    field(DESC, "MPSVac->FBIS BP-RDY1 Cable")
+}
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-BPR2CableEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbFBIS_Interface\".\"MPSVac_FBIS_FIO\".\"MPSBP_CH2_MPSRdy_CH2_CblCnnct\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Cable connected")
+    field(ZNAM, "Cable disconnected")
+    field(DESC, "MPSVac->FBIS BP-RDY2 Cable")
+}
+#Status of the abobe signals
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-BPR1CableStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbFBIS_Interface\".\"MPSVac_FBIS_FIO\".\"MPSBP_CH1_MPSRdy_CH1_CblCnnct_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Cbl.Cnnct.Stat.OK")
+    field(ZNAM, "Cbl.Cnnct.Stat.NOk")
+    field(DESC, "MPSVac->FBIS Cable Stat BPR1")
+}
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-BPR2CableStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbFBIS_Interface\".\"MPSVac_FBIS_FIO\".\"MPSBP_CH2_MPSRdy_CH2_CblCnnct_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Cbl.Cnnct.Stat.OK")
+    field(ZNAM, "Cbl.Cnnct.Stat.NOk")
+    field(DESC, "MPSVac->FBIS Cable Stat BPR2")
+}
+#Signals for data link (PROFINET interface) with FBIS
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-AnybusBPEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbFBIS_Interface\".\"MPSVac_FBIS_PNet\".\"MPSBP_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "BP Ok")
+    field(ZNAM, "BP Not Ok")
+    field(DESC, "MPSVac to FBIS PNet BP")
+}
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-AnybusRdyEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbFBIS_Interface\".\"MPSVac_FBIS_PNet\".\"MPSRdy_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Rdy Ok")
+    field(ZNAM, "Rdy Not Ok")
+    field(DESC, "MPSVac to FBIS PNet Rdy")
+}
+record(ai, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-AnybusKeepAliveCount")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbFBIS_Interface\".\"MPSVac_FBIS_PNet\".\"WtchDog_Val\"")
+    field(SCAN, "I/O Intr")
+    field(DESC, "Notify FBIS PNet MPSVac Alive")
+}
+record(ai, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-AnybusBM")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbFBIS_Interface\".\"MPSVac_FBIS_PNet\".\"BConfig\".\"BMode_Val\"")
+    field(SCAN, "I/O Intr")    
+    field(DESC, "MPSVac FBIS PNet BM")
+}
+record(ai, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-AnybusBD")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbFBIS_Interface\".\"MPSVac_FBIS_PNet\".\"BConfig\".\"BDest_Val\"")
+    field(SCAN, "I/O Intr")    
+    field(DESC, "MPSVac FBIS PNet BD")
+}
+
+
+
+
+
+
+
+

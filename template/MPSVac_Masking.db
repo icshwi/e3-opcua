@@ -1,0 +1,182 @@
+#MPSVac Masking Valves
+#From EPICS to MPSVac
+record(bo, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-CmdMaskEn")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbMaskingTable\".\"EPICS_MPSVac:MaskTbl_Req\".\"Masking_Enbld\"")
+    field(ONAM, "Mask Valves Enbld.")
+    field(ZNAM, "Mask Valves Disbld.")
+    field(DESC, "Flag to allow masking valves")
+}
+
+record(bo, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-CmdMaskVal001En")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbMaskingTable\".\"EPICS_MPSVac:MaskTbl_Req\".\"Valve_001_Enbld\"")
+    field(ONAM, "Masked")
+    field(ZNAM, "Not Masked")
+    field(DESC, "Mask LEBT-010:VAC-VVS-20000")
+}
+
+record(bo, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-CmdMaskVal002En")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbMaskingTable\".\"EPICS_MPSVac:MaskTbl_Req\".\"Valve_002_Enbld\"")
+    field(ONAM, "Masked")
+    field(ZNAM, "Not Masked")
+    field(DESC, "Mask LEBT-010:VAC-VVS-40000")
+}
+
+record(bo, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-CmdMaskVal003En")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbMaskingTable\".\"EPICS_MPSVac:MaskTbl_Req\".\"Valve_003_Enbld\"")
+    field(ONAM, "Masked")
+    field(ZNAM, "Not Masked")
+    field(DESC, "Mask RFQ-010:VAC-VVS-10000")
+}
+
+record(bo, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-CmdMaskVal004En")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbMaskingTable\".\"EPICS_MPSVac:MaskTbl_Req\".\"Valve_004_Enbld\"")
+    field(ONAM, "Masked")
+    field(ZNAM, "Not Masked")
+    field(DESC, "Mask DTL-010:VAC-VVS-10000")
+}
+
+record(bo, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-CmdMaskVal005En")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbMaskingTable\".\"EPICS_MPSVac:MaskTbl_Req\".\"Valve_005_Enbld\"")
+    field(ONAM, "Masked")
+    field(ZNAM, "Not Masked")
+    field(DESC, "Mask DTL-020:VAC-VVS-10000")
+}
+
+record(bo, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-CmdMaskVal006En")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbMaskingTable\".\"EPICS_MPSVac:MaskTbl_Req\".\"Valve_006_Enbld\"")
+    field(ONAM, "Masked")
+    field(ZNAM, "Not Masked")
+    field(DESC, "Mask DTL-030:VAC-VVS-10000")
+}
+
+record(bo, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-CmdMaskVal007En")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbMaskingTable\".\"EPICS_MPSVac:MaskTbl_Req\".\"Valve_007_Enbld\"")
+    field(ONAM, "Masked")
+    field(ZNAM, "Not Masked")
+    field(DESC, "Mask DTL-040:VAC-VVS-10000")
+}
+
+record(bo, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-CmdMaskVal008En")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbMaskingTable\".\"EPICS_MPSVac:MaskTbl_Req\".\"Valve_008_Enbld\"")
+    field(ONAM, "Masked")
+    field(ZNAM, "Not Masked")
+    field(DESC, "Mask DTL-050:VAC-VVS-10000")
+}
+
+#From MPSVac to EPICS (Feedback over the above variables)
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-CmdMaskEnR")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbMaskingTable\".\"MPSVac_EPICS:MaskTbl\".\"Masking_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Feedbck Mask Enbld.")
+    field(ZNAM, "Feedbck Mask Disbld.")
+    field(DESC, "Feedback on masking valves")
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-MaskVal001EnR")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbMaskingTable\".\"MPSVac_EPICS:MaskTbl\".\"Valve_001_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Feedbck Mask Enbld.")
+    field(ZNAM, "Feedbck Mask Disbld.")
+    field(DESC, "Fback Mask LEBT-010:VAC-VVS-20000")
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-MaskVal002EnR")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbMaskingTable\".\"MPSVac_EPICS:MaskTbl\".\"Valve_002_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Feedbck Mask Enbld.")
+    field(ZNAM, "Feedbck Mask Disbld.")
+    field(DESC, "Fback Mask LEBT-010:VAC-VVS-40000")
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-MaskVal003EnR")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbMaskingTable\".\"MPSVac_EPICS:MaskTbl\".\"Valve_003_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Feedbck Mask Enbld.")
+    field(ZNAM, "Feedbck Mask Disbld.")
+    field(DESC, "Fback Mask RFQ-010:VAC-VVS-10000")
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-MaskVal004EnR")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbMaskingTable\".\"MPSVac_EPICS:MaskTbl\".\"Valve_004_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Feedbck Mask Enbld.")
+    field(ZNAM, "Feedbck Mask Disbld.")
+    field(DESC, "Fback Mask DTL-010:VAC-VVS-10000")
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-MaskVal005EnR")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbMaskingTable\".\"MPSVac_EPICS:MaskTbl\".\"Valve_005_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Feedbck Mask Enbld.")
+    field(ZNAM, "Feedbck Mask Disbld.")
+    field(DESC, "Fback Mask DTL-020:VAC-VVS-10000")
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-MaskVal006EnR")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbMaskingTable\".\"MPSVac_EPICS:MaskTbl\".\"Valve_006_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Feedbck Mask Enbld.")
+    field(ZNAM, "Feedbck Mask Disbld.")
+    field(DESC, "Fback Mask DTL-030:VAC-VVS-10000")
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-MaskVal007EnR")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbMaskingTable\".\"MPSVac_EPICS:MaskTbl\".\"Valve_007_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Feedbck Mask Enbld.")
+    field(ZNAM, "Feedbck Mask Disbld.")
+    field(DESC, "Fback Mask DTL-040:VAC-VVS-10000")
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-MaskVal008EnR")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbMaskingTable\".\"MPSVac_EPICS:MaskTbl\".\"Valve_008_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Feedbck Mask Enbld.")
+    field(ZNAM, "Feedbck Mask Disbld.")
+    field(DESC, "Fback Mask DTL-050:VAC-VVS-10000")
+}
+
+
+
+
+
+
+
+
+

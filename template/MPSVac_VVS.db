@@ -1,0 +1,1420 @@
+#Valve LEBT-010:Vac-VVS-20000
+#Open Switch
+record(bi, "LEBT-010:Vac-VVS-20000:MPSVac-OpenSwitEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-20000_Diag_Status\".\"Open_SW_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Actuated")
+    field(ZNAM, "Not Actuated")
+    field(DESC, "Valve MPS Open Switch")
+}
+#Closed Switch
+record(bi, "LEBT-010:Vac-VVS-20000:MPSVac-ClosedSwitEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-20000_Diag_Status\".\"Closed_SW_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Actuated")
+    field(ZNAM, "Not Actuated")
+    field(DESC, "Valve MPS Closed Switch")
+}
+#Open Switch Status
+record(bi, "LEBT-010:Vac-VVS-20000:MPSVac-OpenSwitStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-20000_Diag_Status\".\"Open_SW_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deativated")
+    field(DESC, "Valve Open Switch FDI status")
+}
+#Close Switch Status
+record(bi, "LEBT-010:Vac-VVS-20000:MPSVac-ClosedSwitStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-20000_Diag_Status\".\"Closed_SW_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "Valve Close Switch FDI status")
+}
+#Open Switch Discrepancy Error
+record(bi, "LEBT-010:Vac-VVS-20000:MPSVac-OpenSwitErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-20000_Diag_Status\".\"Open_SW_Discr_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Error")
+    field(DESC, "Valve Open Switch Disc. Err.")
+} 
+#Close Switch Discrepancy Error
+record(bi, "LEBT-010:Vac-VVS-20000:MPSVac-ClosedSwitErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-20000_Diag_Status\".\"Closed_SW_Discr_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Error")
+    field(DESC, "Valve Close Switch Disc. Err.")
+}
+#Valve Open State
+record(bi, "LEBT-010:Vac-VVS-20000:MPSVac-OpenEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-20000_Diag_Status\".\"Open_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Opened")
+    field(DESC, "V.Op.Swt.Act./Clos.Swt.Unact.")
+} 
+#Valve Closed State
+record(bi, "LEBT-010:Vac-VVS-20000:MPSVac-CloseEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-20000_Diag_Status\".\"Closed_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Closed")
+    field(DESC, "V.Cl.Swt.Act./Op.Swt.Unact.")
+} 
+#Valve Error State
+record(bi, "LEBT-010:Vac-VVS-20000:MPSVac-OpenCloseErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-20000_Diag_Status\".\"Open_Closed_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Position Error")
+    field(DESC, "V.Err.State on switches")
+} 
+#Cable connect for open/close switches
+record(bi, "LEBT-010:Vac-VVS-20000:MPSVac-SwitCableEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-20000_Diag_Status\".\"Open_Closed_SW_CblCnnct_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Connected")
+    field(ZNAM, "Not Connected")
+    field(DESC, "Cable connct. Swts")
+} 
+#Cable connect for open/close switches channel status
+record(bi, "LEBT-010:Vac-VVS-20000:MPSVac-SwitCableStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-20000_Diag_Status\".\"Open_Closed_SW_CblCnnct_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "Cable connct. Swts FDI Status")
+} 
+#VBP from vacuum controls to MPSVac
+record(bi, "LEBT-010:Vac-VVS-20000:MPSVac-BPEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-20000_Diag_Status\".\"VBP_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Ok")
+    field(ZNAM, "Not Ok")
+    field(DESC, "VBP from LPS")
+} 
+#VBP input channel status for valve
+record(bi, "LEBT-010:Vac-VVS-20000:MPSVac-BPStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-20000_Diag_Status\".\"VBP_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "VBP FDI input status")
+} 
+#VBP discrepancy error for valve
+record(bi, "LEBT-010:Vac-VVS-20000:MPSVac-BPErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-20000_Diag_Status\".\"VBP_Discr_Error\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Discrepancy Error")
+    field(DESC, "VBP Discr.Err. FDI input")
+} 
+#VBP cable to valve
+record(bi, "LEBT-010:Vac-VVS-20000:MPSVac-BPCableEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-20000_Diag_Status\".\"VBP_CblCnnct_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Connected")
+    field(ZNAM, "Not Connected")
+    field(DESC, "VBP Cable to valve")
+} 
+#VBP cable to valve status
+record(bi, "LEBT-010:Vac-VVS-20000:MPSVac-BPCableStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-20000_Diag_Status\".\"VBP_CblCnnct_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "VBP cable connct FDI status")
+} 
+#Valve Masked 
+record(bi, "LEBT-010:Vac-VVS-20000:MPSVac-MaskEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-20000_Diag_Status\".\"Masked_Enbld\"")    
+    field(SCAN, "I/O Intr")
+    field(ONAM, "true")
+    field(ZNAM, "false")
+    field(DESC, "Valve Mask")
+} 
+#Valve is Downstream Beam Destination 
+record(bi, "LEBT-010:Vac-VVS-20000:MPSVac-DwnStrmBDEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-20000_Diag_Status\".\"DownStream_BDest_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Downstream BD")
+    field(DESC, "Valve Downstream Beam Destination")
+} 
+
+
+#Valve LEBT-010:Vac-VVS-40000
+#Open Switch
+record(bi, "LEBT-010:Vac-VVS-40000:MPSVac-OpenSwitEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-40000_Diag_Status\".\"Open_SW_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Actuated")
+    field(ZNAM, "Not Actuated")
+    field(DESC, "Valve MPS Open Switch")
+}
+#Closed Switch
+record(bi, "LEBT-010:Vac-VVS-40000:MPSVac-ClosedSwitEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-40000_Diag_Status\".\"Closed_SW_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Actuated")
+    field(ZNAM, "Not Actuated")
+    field(DESC, "Valve MPS Closed Switch")
+}
+#Open Switch Status
+record(bi, "LEBT-010:Vac-VVS-40000:MPSVac-OpenSwitStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-40000_Diag_Status\".\"Open_SW_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deativated")
+    field(DESC, "Valve Open Switch FDI status")
+}
+#Close Switch Status
+record(bi, "LEBT-010:Vac-VVS-40000:MPSVac-ClosedSwitStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-40000_Diag_Status\".\"Closed_SW_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "Valve Close Switch FDI status")
+}
+#Open Switch Discrepancy Error
+record(bi, "LEBT-010:Vac-VVS-40000:MPSVac-OpenSwitErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-40000_Diag_Status\".\"Open_SW_Discr_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Error")
+    field(DESC, "Valve Open Switch Disc. Err.")
+} 
+#Close Switch Discrepancy Error
+record(bi, "LEBT-010:Vac-VVS-40000:MPSVac-ClosedSwitErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-40000_Diag_Status\".\"Closed_SW_Discr_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Error")
+    field(DESC, "Valve Close Switch Disc. Err.")
+}
+#Valve Open State
+record(bi, "LEBT-010:Vac-VVS-40000:MPSVac-OpenEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-40000_Diag_Status\".\"Open_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Opened")
+    field(DESC, "V.Op.Swt.Act./Clos.Swt.Unact.")
+} 
+#Valve Closed State
+record(bi, "LEBT-010:Vac-VVS-40000:MPSVac-CloseEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-40000_Diag_Status\".\"Closed_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Closed")
+    field(DESC, "V.Cl.Swt.Act./Op.Swt.Unact.")
+} 
+#Valve Error State
+record(bi, "LEBT-010:Vac-VVS-40000:MPSVac-OpenCloseErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-40000_Diag_Status\".\"Open_Closed_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Position Error")
+    field(DESC, "V.Err.State on switches")
+} 
+#Cable connect for open/close switches
+record(bi, "LEBT-010:Vac-VVS-40000:MPSVac-SwitCableEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-40000_Diag_Status\".\"Open_Closed_SW_CblCnnct_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Connected")
+    field(ZNAM, "Not Connected")
+    field(DESC, "Cable connct. Swts")
+} 
+#Cable connect for open/close switches channel status
+record(bi, "LEBT-010:Vac-VVS-40000:MPSVac-SwitCableStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-40000_Diag_Status\".\"Open_Closed_SW_CblCnnct_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "Cable connct. Swts FDI Status")
+} 
+#VBP from vacuum controls to MPSVac
+record(bi, "LEBT-010:Vac-VVS-40000:MPSVac-BPEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-40000_Diag_Status\".\"VBP_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Ok")
+    field(ZNAM, "Not Ok")
+    field(DESC, "VBP from LPS")
+} 
+#VBP input channel status for valve
+record(bi, "LEBT-010:Vac-VVS-40000:MPSVac-BPStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-40000_Diag_Status\".\"VBP_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "VBP FDI input status")
+} 
+#VBP discrepancy error for valve
+record(bi, "LEBT-010:Vac-VVS-40000:MPSVac-BPErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-40000_Diag_Status\".\"VBP_Discr_Error\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Discrepancy Error")
+    field(DESC, "VBP Discr.Err. FDI input")
+} 
+#VBP cable to valve
+record(bi, "LEBT-010:Vac-VVS-40000:MPSVac-BPCableEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-40000_Diag_Status\".\"VBP_CblCnnct_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Connected")
+    field(ZNAM, "Not Connected")
+    field(DESC, "VBP Cable to valve")
+} 
+#VBP cable to valve status
+record(bi, "LEBT-010:Vac-VVS-40000:MPSVac-BPCableStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-40000_Diag_Status\".\"VBP_CblCnnct_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "VBP cable connct FDI status")
+} 
+#Valve Masked 
+record(bi, "LEBT-010:Vac-VVS-40000:MPSVac-MaskEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-40000_Diag_Status\".\"Masked_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "true")
+    field(ZNAM, "false")
+    field(DESC, "Valve Mask")
+} 
+#Valve is Downstream Beam Destination 
+record(bi, "LEBT-010:Vac-VVS-40000:MPSVac-DwnStrmBDEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"LEBT-010:Vac-VVS-40000_Diag_Status\".\"DownStream_BDest_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Downstream BD")
+    field(DESC, "Valve Downstream Beam Destination")
+} 
+
+
+#Valve RFQ-010:Vac-VVS-10000
+#Open Switch
+record(bi, "RFQ-010:Vac-VVS-10000:MPSVac-OpenSwitEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"RFQ-010:Vac-VVS-10000_Diag_Status\".\"Open_SW_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Actuated")
+    field(ZNAM, "Not Actuated")
+    field(DESC, "Valve MPS Open Switch")
+}
+#Closed Switch
+record(bi, "RFQ-010:Vac-VVS-10000:MPSVac-ClosedSwitEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"RFQ-010:Vac-VVS-10000_Diag_Status\".\"Closed_SW_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Actuated")
+    field(ZNAM, "Not Actuated")
+    field(DESC, "Valve MPS Closed Switch")
+}
+#Open Switch Status
+record(bi, "RFQ-010:Vac-VVS-10000:MPSVac-OpenSwitStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"RFQ-010:Vac-VVS-10000_Diag_Status\".\"Open_SW_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deativated")
+    field(DESC, "Valve Open Switch FDI status")
+}
+#Close Switch Status
+record(bi, "RFQ-010:Vac-VVS-10000:MPSVac-ClosedSwitStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"RFQ-010:Vac-VVS-10000_Diag_Status\".\"Closed_SW_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "Valve Close Switch FDI status")
+}
+#Open Switch Discrepancy Error
+record(bi, "RFQ-010:Vac-VVS-10000:MPSVac-OpenSwitErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"RFQ-010:Vac-VVS-10000_Diag_Status\".\"Open_SW_Discr_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Error")
+    field(DESC, "Valve Open Switch Disc. Err.")
+} 
+#Close Switch Discrepancy Error
+record(bi, "RFQ-010:Vac-VVS-10000:MPSVac-ClosedSwitErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"RFQ-010:Vac-VVS-10000_Diag_Status\".\"Closed_SW_Discr_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Error")
+    field(DESC, "Valve Close Switch Disc. Err.")
+}
+#Valve Open State
+record(bi, "RFQ-010:Vac-VVS-10000:MPSVac-OpenEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"RFQ-010:Vac-VVS-10000_Diag_Status\".\"Open_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Opened")
+    field(DESC, "V.Op.Swt.Act./Clos.Swt.Unact.")
+} 
+#Valve Closed State
+record(bi, "RFQ-010:Vac-VVS-10000:MPSVac-CloseEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"RFQ-010:Vac-VVS-10000_Diag_Status\".\"Closed_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Closed")
+    field(DESC, "V.Cl.Swt.Act./Op.Swt.Unact.")
+} 
+#Valve Error State
+record(bi, "RFQ-010:Vac-VVS-10000:MPSVac-OpenCloseErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"RFQ-010:Vac-VVS-10000_Diag_Status\".\"Open_Closed_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Position Error")
+    field(DESC, "V.Err.State on switches")
+} 
+#Cable connect for open/close switches
+record(bi, "RFQ-010:Vac-VVS-10000:MPSVac-SwitCableEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"RFQ-010:Vac-VVS-10000_Diag_Status\".\"Open_Closed_SW_CblCnnct_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Connected")
+    field(ZNAM, "Not Connected")
+    field(DESC, "Cable connct. Swts")
+} 
+#Cable connect for open/close switches channel status
+record(bi, "RFQ-010:Vac-VVS-10000:MPSVac-SwitCableStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"RFQ-010:Vac-VVS-10000_Diag_Status\".\"Open_Closed_SW_CblCnnct_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "Cable connct. Swts FDI Status")
+} 
+#VBP from vacuum controls to MPSVac
+record(bi, "RFQ-010:Vac-VVS-10000:MPSVac-BPEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"RFQ-010:Vac-VVS-10000_Diag_Status\".\"VBP_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Ok")
+    field(ZNAM, "Not Ok")
+    field(DESC, "VBP from LPS")
+} 
+#VBP input channel status for valve
+record(bi, "RFQ-010:Vac-VVS-10000:MPSVac-BPStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"RFQ-010:Vac-VVS-10000_Diag_Status\".\"VBP_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "VBP FDI input status")
+} 
+#VBP discrepancy error for valve
+record(bi, "RFQ-010:Vac-VVS-10000:MPSVac-BPErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"RFQ-010:Vac-VVS-10000_Diag_Status\".\"VBP_Discr_Error\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Discrepancy Error")
+    field(DESC, "VBP Discr.Err. FDI input")
+} 
+#VBP cable to valve
+record(bi, "RFQ-010:Vac-VVS-10000:MPSVac-BPCableEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"RFQ-010:Vac-VVS-10000_Diag_Status\".\"VBP_CblCnnct_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Connected")
+    field(ZNAM, "Not Connected")
+    field(DESC, "VBP Cable to valve")
+} 
+#VBP cable to valve status
+record(bi, "RFQ-010:Vac-VVS-10000:MPSVac-BPCableStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"RFQ-010:Vac-VVS-10000_Diag_Status\".\"VBP_CblCnnct_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "VBP cable connct FDI status")
+} 
+#Valve Masked 
+record(bi, "RFQ-010:Vac-VVS-10000:MPSVac-MaskEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"RFQ-010:Vac-VVS-10000_Diag_Status\".\"Masked_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "true")
+    field(ZNAM, "false")
+    field(DESC, "Valve Mask")
+} 
+#Valve is Downstream Beam Destination 
+record(bi, "RFQ-010:Vac-VVS-10000:MPSVac-DwnStrmBDEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"RFQ-010:Vac-VVS-10000_Diag_Status\".\"DownStream_BDest_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Downstream BD")
+    field(DESC, "Valve Downstream Beam Destination")
+} 
+
+
+#Valve DTL-010:Vac-VVS-10000
+#Open Switch
+record(bi, "DTL-010:Vac-VVS-10000:MPSVac-OpenSwitEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-010:Vac-VVS-10000_Diag_Status\".\"Open_SW_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Actuated")
+    field(ZNAM, "Not Actuated")
+    field(DESC, "Valve MPS Open Switch")
+}
+#Closed Switch
+record(bi, "DTL-010:Vac-VVS-10000:MPSVac-ClosedSwitEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-010:Vac-VVS-10000_Diag_Status\".\"Closed_SW_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Actuated")
+    field(ZNAM, "Not Actuated")
+    field(DESC, "Valve MPS Closed Switch")
+}
+#Open Switch Status
+record(bi, "DTL-010:Vac-VVS-10000:MPSVac-OpenSwitStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-010:Vac-VVS-10000_Diag_Status\".\"Open_SW_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deativated")
+    field(DESC, "Valve Open Switch FDI status")
+}
+#Close Switch Status
+record(bi, "DTL-010:Vac-VVS-10000:MPSVac-ClosedSwitStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-010:Vac-VVS-10000_Diag_Status\".\"Closed_SW_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "Valve Close Switch FDI status")
+}
+#Open Switch Discrepancy Error
+record(bi, "DTL-010:Vac-VVS-10000:MPSVac-OpenSwitErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-010:Vac-VVS-10000_Diag_Status\".\"Open_SW_Discr_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Error")
+    field(DESC, "Valve Open Switch Disc. Err.")
+} 
+#Close Switch Discrepancy Error
+record(bi, "DTL-010:Vac-VVS-10000:MPSVac-ClosedSwitErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-010:Vac-VVS-10000_Diag_Status\".\"Closed_SW_Discr_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Error")
+    field(DESC, "Valve Close Switch Disc. Err.")
+}
+#Valve Open State
+record(bi, "DTL-010:Vac-VVS-10000:MPSVac-OpenEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-010:Vac-VVS-10000_Diag_Status\".\"Open_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Opened")
+    field(DESC, "V.Op.Swt.Act./Clos.Swt.Unact.")
+} 
+#Valve Closed State
+record(bi, "DTL-010:Vac-VVS-10000:MPSVac-CloseEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-010:Vac-VVS-10000_Diag_Status\".\"Closed_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Closed")
+    field(DESC, "V.Cl.Swt.Act./Op.Swt.Unact.")
+} 
+#Valve Error State
+record(bi, "DTL-010:Vac-VVS-10000:MPSVac-OpenCloseErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-010:Vac-VVS-10000_Diag_Status\".\"Open_Closed_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Position Error")
+    field(DESC, "V.Err.State on switches")
+} 
+#Cable connect for open/close switches
+record(bi, "DTL-010:Vac-VVS-10000:MPSVac-SwitCableEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-010:Vac-VVS-10000_Diag_Status\".\"Open_Closed_SW_CblCnnct_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Connected")
+    field(ZNAM, "Not Connected")
+    field(DESC, "Cable connct. Swts")
+} 
+#Cable connect for open/close switches channel status
+record(bi, "DTL-010:Vac-VVS-10000:MPSVac-SwitCableStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-010:Vac-VVS-10000_Diag_Status\".\"Open_Closed_SW_CblCnnct_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "Cable connct. Swts FDI Status")
+} 
+#VBP from vacuum controls to MPSVac
+record(bi, "DTL-010:Vac-VVS-10000:MPSVac-BPEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-010:Vac-VVS-10000_Diag_Status\".\"VBP_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Ok")
+    field(ZNAM, "Not Ok")
+    field(DESC, "VBP from LPS")
+} 
+#VBP input channel status for valve
+record(bi, "DTL-010:Vac-VVS-10000:MPSVac-BPStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-010:Vac-VVS-10000_Diag_Status\".\"VBP_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "VBP FDI input status")
+} 
+#VBP discrepancy error for valve
+record(bi, "DTL-010:Vac-VVS-10000:MPSVac-BPErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-010:Vac-VVS-10000_Diag_Status\".\"VBP_Discr_Error\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Discrepancy Error")
+    field(DESC, "VBP Discr.Err. FDI input")
+} 
+#VBP cable to valve
+record(bi, "DTL-010:Vac-VVS-10000:MPSVac-BPCableEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-010:Vac-VVS-10000_Diag_Status\".\"VBP_CblCnnct_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Connected")
+    field(ZNAM, "Not Connected")
+    field(DESC, "VBP Cable to valve")
+} 
+#VBP cable to valve status
+record(bi, "DTL-010:Vac-VVS-10000:MPSVac-BPCableStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-010:Vac-VVS-10000_Diag_Status\".\"VBP_CblCnnct_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "VBP cable connct FDI status")
+} 
+#Valve Masked 
+record(bi, "DTL-010:Vac-VVS-10000:MPSVac-MaskEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-010:Vac-VVS-10000_Diag_Status\".\"Masked_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "true")
+    field(ZNAM, "false")
+    field(DESC, "Valve Mask")    
+} 
+
+#Valve is Downstream Beam Destination 
+record(bi, "DTL-010:Vac-VVS-10000:MPSVac-DwnStrmBDEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-010:Vac-VVS-10000_Diag_Status\".\"DownStream_BDest_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Downstream BD")
+    field(DESC, "Valve Downstream Beam Destination")
+} 
+
+
+#Valve DTL-020:Vac-VVS-10000
+#Open Switch
+record(bi, "DTL-020:Vac-VVS-10000:MPSVac-OpenSwitEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-020:Vac-VVS-10000_Diag_Status\".\"Open_SW_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Actuated")
+    field(ZNAM, "Not Actuated")
+    field(DESC, "Valve MPS Open Switch")
+}
+#Closed Switch
+record(bi, "DTL-020:Vac-VVS-10000:MPSVac-ClosedSwitEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-020:Vac-VVS-10000_Diag_Status\".\"Closed_SW_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Actuated")
+    field(ZNAM, "Not Actuated")
+    field(DESC, "Valve MPS Closed Switch")
+}
+#Open Switch Status
+record(bi, "DTL-020:Vac-VVS-20000:MPSVac-OpenSwitStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-020:Vac-VVS-10000_Diag_Status\".\"Open_SW_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deativated")
+    field(DESC, "Valve Open Switch FDI status")
+}
+#Close Switch Status
+record(bi, "DTL-020:Vac-VVS-10000:MPSVac-ClosedSwitStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-020:Vac-VVS-10000_Diag_Status\".\"Closed_SW_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "Valve Close Switch FDI status")
+}
+#Open Switch Discrepancy Error
+record(bi, "DTL-020:Vac-VVS-10000:MPSVac-OpenSwitErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-020:Vac-VVS-10000_Diag_Status\".\"Open_SW_Discr_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Error")
+    field(DESC, "Valve Open Switch Disc. Err.")
+} 
+#Close Switch Discrepancy Error
+record(bi, "DTL-020:Vac-VVS-10000:MPSVac-ClosedSwitErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-020:Vac-VVS-10000_Diag_Status\".\"Closed_SW_Discr_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Error")
+    field(DESC, "Valve Close Switch Disc. Err.")
+}
+#Valve Open State
+record(bi, "DTL-020:Vac-VVS-10000:MPSVac-OpenEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-020:Vac-VVS-10000_Diag_Status\".\"Open_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Opened")
+    field(DESC, "V.Op.Swt.Act./Clos.Swt.Unact.")
+} 
+#Valve Closed State
+record(bi, "DTL-020:Vac-VVS-10000:MPSVac-CloseEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-020:Vac-VVS-10000_Diag_Status\".\"Closed_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Closed")
+    field(DESC, "V.Cl.Swt.Act./Op.Swt.Unact.")
+} 
+#Valve Error State
+record(bi, "DTL-020:Vac-VVS-10000:MPSVac-OpenCloseErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-020:Vac-VVS-10000_Diag_Status\".\"Open_Closed_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Position Error")
+    field(DESC, "V.Err.State on switches")
+} 
+#Cable connect for open/close switches
+record(bi, "DTL-020:Vac-VVS-10000:MPSVac-SwitCableEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-020:Vac-VVS-10000_Diag_Status\".\"Open_Closed_SW_CblCnnct_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Connected")
+    field(ZNAM, "Not Connected")
+    field(DESC, "Cable connct. Swts")
+} 
+#Cable connect for open/close switches channel status
+record(bi, "DTL-020:Vac-VVS-10000:MPSVac-SwitCableStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-020:Vac-VVS-10000_Diag_Status\".\"Open_Closed_SW_CblCnnct_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "Cable connct. Swts FDI Status")
+} 
+#VBP from vacuum controls to MPSVac
+record(bi, "DTL-020:Vac-VVS-10000:MPSVac-BPEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-020:Vac-VVS-10000_Diag_Status\".\"VBP_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Ok")
+    field(ZNAM, "Not Ok")
+    field(DESC, "VBP from LPS")
+} 
+#VBP input channel status for valve
+record(bi, "DTL-020:Vac-VVS-10000:MPSVac-BPStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-020:Vac-VVS-10000_Diag_Status\".\"VBP_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "VBP FDI input status")
+} 
+#VBP discrepancy error for valve
+record(bi, "DTL-020:Vac-VVS-10000:MPSVac-BPErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-020:Vac-VVS-10000_Diag_Status\".\"VBP_Discr_Error\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Discrepancy Error")
+    field(DESC, "VBP Discr.Err. FDI input")
+} 
+#VBP cable to valve
+record(bi, "DTL-020:Vac-VVS-10000:MPSVac-BPCableEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-020:Vac-VVS-10000_Diag_Status\".\"VBP_CblCnnct_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Connected")
+    field(ZNAM, "Not Connected")
+    field(DESC, "VBP Cable to valve")
+} 
+#VBP cable to valve status
+record(bi, "DTL-020:Vac-VVS-10000:MPSVac-BPCableStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-020:Vac-VVS-10000_Diag_Status\".\"VBP_CblCnnct_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "VBP cable connct FDI status")
+} 
+#Valve Masked 
+record(bi, "DTL-020:Vac-VVS-10000:MPSVac-MaskEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-020:Vac-VVS-10000_Diag_Status\".\"Masked_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "true")
+    field(ZNAM, "false")
+    field(DESC, "Valve Mask")
+} 
+#Valve is Downstream Beam Destination 
+record(bi, "DTL-020:Vac-VVS-10000:MPSVac-DwnStrmBDEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-020:Vac-VVS-10000_Diag_Status\".\"DownStream_BDest_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Downstream BD")
+    field(DESC, "Valve Downstream Beam Destination")
+} 
+
+
+#Valve DTL-030:Vac-VVS-10000
+#Open Switch
+record(bi, "DTL-030:Vac-VVS-10000:MPSVac-OpenSwitEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-030:Vac-VVS-10000_Diag_Status\".\"Open_SW_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Actuated")
+    field(ZNAM, "Not Actuated")
+    field(DESC, "Valve MPS Open Switch")
+}
+#Closed Switch
+record(bi, "DTL-030:Vac-VVS-10000:MPSVac-ClosedSwitEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-030:Vac-VVS-10000_Diag_Status\".\"Closed_SW_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Actuated")
+    field(ZNAM, "Not Actuated")
+    field(DESC, "Valve MPS Closed Switch")
+}
+#Open Switch Status
+record(bi, "DTL-030:Vac-VVS-10000:MPSVac-OpenSwitStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-030:Vac-VVS-10000_Diag_Status\".\"Open_SW_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deativated")
+    field(DESC, "Valve Open Switch FDI status")
+}
+#Close Switch Status
+record(bi, "DTL-030:Vac-VVS-10000:MPSVac-ClosedSwitStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-030:Vac-VVS-10000_Diag_Status\".\"Closed_SW_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "Valve Close Switch FDI status")
+}
+#Open Switch Discrepancy Error
+record(bi, "DTL-030:Vac-VVS-10000:MPSVac-OpenSwitErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-030:Vac-VVS-10000_Diag_Status\".\"Open_SW_Discr_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Error")
+    field(DESC, "Valve Open Switch Disc. Err.")
+} 
+#Close Switch Discrepancy Error
+record(bi, "DTL-030:Vac-VVS-10000:MPSVac-ClosedSwitErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-030:Vac-VVS-10000_Diag_Status\".\"Closed_SW_Discr_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Error")
+    field(DESC, "Valve Close Switch Disc. Err.")
+}
+#Valve Open State
+record(bi, "DTL-030:Vac-VVS-10000:MPSVac-OpenEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-030:Vac-VVS-10000_Diag_Status\".\"Open_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Opened")
+    field(DESC, "V.Op.Swt.Act./Clos.Swt.Unact.")
+} 
+#Valve Closed State
+record(bi, "DTL-030:Vac-VVS-10000:MPSVac-CloseEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-030:Vac-VVS-10000_Diag_Status\".\"Closed_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Closed")
+    field(DESC, "V.Cl.Swt.Act./Op.Swt.Unact.")
+} 
+#Valve Error State
+record(bi, "DTL-030:Vac-VVS-10000:MPSVac-OpenCloseErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-030:Vac-VVS-10000_Diag_Status\".\"Open_Closed_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Position Error")
+    field(DESC, "V.Err.State on switches")
+} 
+#Cable connect for open/close switches
+record(bi, "DTL-030:Vac-VVS-10000:MPSVac-SwitCableEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-030:Vac-VVS-10000_Diag_Status\".\"Open_Closed_SW_CblCnnct_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Connected")
+    field(ZNAM, "Not Connected")
+    field(DESC, "Cable connct. Swts")
+} 
+#Cable connect for open/close switches channel status
+record(bi, "DTL-030:Vac-VVS-10000:MPSVac-SwitCableStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-030:Vac-VVS-10000_Diag_Status\".\"Open_Closed_SW_CblCnnct_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "Cable connct. Swts FDI Status")
+} 
+#VBP from vacuum controls to MPSVac
+record(bi, "DTL-030:Vac-VVS-10000:MPSVac-BPEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-030:Vac-VVS-10000_Diag_Status\".\"VBP_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Ok")
+    field(ZNAM, "Not Ok")
+    field(DESC, "VBP from LPS")
+} 
+#VBP input channel status for valve
+record(bi, "DTL-030:Vac-VVS-10000:MPSVac-BPStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-030:Vac-VVS-10000_Diag_Status\".\"VBP_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "VBP FDI input status")
+} 
+#VBP discrepancy error for valve
+record(bi, "DTL-030:Vac-VVS-10000:MPSVac-BPErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-030:Vac-VVS-10000_Diag_Status\".\"VBP_Discr_Error\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Discrepancy Error")
+    field(DESC, "VBP Discr.Err. FDI input")
+} 
+#VBP cable to valve
+record(bi, "DTL-030:Vac-VVS-10000:MPSVac-BPCableEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-030:Vac-VVS-10000_Diag_Status\".\"VBP_CblCnnct_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Connected")
+    field(ZNAM, "Not Connected")
+    field(DESC, "VBP Cable to valve")
+} 
+#VBP cable to valve status
+record(bi, "DTL-030:Vac-VVS-10000:MPSVac-BPCableStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-030:Vac-VVS-10000_Diag_Status\".\"VBP_CblCnnct_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "VBP cable connct FDI status")
+} 
+#Valve masked 
+record(bi, "DTL-030:Vac-VVS-10000:MPSVac-MaskEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-030:Vac-VVS-10000_Diag_Status\".\"Masked_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "true")
+    field(ZNAM, "false")
+    field(DESC, "Valve Mask")
+} 
+#Valve is Downstream Beam Destination 
+record(bi, "DTL-030:Vac-VVS-10000:MPSVac-DwnStrmBDEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-030:Vac-VVS-10000_Diag_Status\".\"DownStream_BDest_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Downstream BD")
+    field(DESC, "Valve Downstream Beam Destination")
+} 
+
+
+
+#Valve DTL-040:Vac-VVS-10000
+#Open Switch
+record(bi, "DTL-040:Vac-VVS-10000:MPSVac-OpenSwitEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-040:Vac-VVS-10000_Diag_Status\".\"Open_SW_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Actuated")
+    field(ZNAM, "Not Actuated")
+    field(DESC, "Valve MPS Open Switch")
+}
+#Closed Switch
+record(bi, "DTL-040:Vac-VVS-10000:MPSVac-ClosedSwitEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-040:Vac-VVS-10000_Diag_Status\".\"Closed_SW_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Actuated")
+    field(ZNAM, "Not Actuated")
+    field(DESC, "Valve MPS Closed Switch")
+}
+#Open Switch Status
+record(bi, "DTL-040:Vac-VVS-10000:MPSVac-OpenSwitStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-040:Vac-VVS-10000_Diag_Status\".\"Open_SW_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deativated")
+    field(DESC, "Valve Open Switch FDI status")
+}
+#Close Switch Status
+record(bi, "DTL-040:Vac-VVS-10000:MPSVac-ClosedSwitStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-040:Vac-VVS-10000_Diag_Status\".\"Closed_SW_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "Valve Close Switch FDI status")
+}
+#Open Switch Discrepancy Error
+record(bi, "DTL-040:Vac-VVS-10000:MPSVac-OpenSwitErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-040:Vac-VVS-10000_Diag_Status\".\"Open_SW_Discr_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Error")
+    field(DESC, "Valve Open Switch Disc. Err.")
+} 
+#Close Switch Discrepancy Error
+record(bi, "DTL-040:Vac-VVS-10000:MPSVac-ClosedSwitErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-040:Vac-VVS-10000_Diag_Status\".\"Closed_SW_Discr_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Error")
+    field(DESC, "Valve Close Switch Disc. Err.")
+}
+#Valve Open State
+record(bi, "DTL-040:Vac-VVS-10000:MPSVac-OpenEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-040:Vac-VVS-10000_Diag_Status\".\"Open_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Opened")
+    field(DESC, "V.Op.Swt.Act./Clos.Swt.Unact.")
+} 
+#Valve Closed State
+record(bi, "DTL-040:Vac-VVS-10000:MPSVac-CloseEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-040:Vac-VVS-10000_Diag_Status\".\"Closed_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Closed")
+    field(DESC, "V.Cl.Swt.Act./Op.Swt.Unact.")
+} 
+#Valve Error State
+record(bi, "DTL-040:Vac-VVS-10000:MPSVac-OpenCloseErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-040:Vac-VVS-10000_Diag_Status\".\"Open_Closed_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Position Error")
+    field(DESC, "V.Err.State on switches")
+} 
+#Cable connect for open/close switches
+record(bi, "DTL-040:Vac-VVS-10000:MPSVac-SwitCableEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-040:Vac-VVS-10000_Diag_Status\".\"Open_Closed_SW_CblCnnct_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Connected")
+    field(ZNAM, "Not Connected")
+    field(DESC, "Cable connct. Swts")
+} 
+#Cable connect for open/close switches channel status
+record(bi, "DTL-040:Vac-VVS-10000:MPSVac-SwitCableStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-040:Vac-VVS-10000_Diag_Status\".\"Open_Closed_SW_CblCnnct_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "Cable connct. Swts FDI Status")
+} 
+#VBP from vacuum controls to MPSVac
+record(bi, "DTL-040:Vac-VVS-10000:MPSVac-BPEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-040:Vac-VVS-10000_Diag_Status\".\"VBP_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Ok")
+    field(ZNAM, "Not Ok")
+    field(DESC, "VBP from LPS")
+} 
+#VBP input channel status for valve
+record(bi, "DTL-040:Vac-VVS-10000:MPSVac-BPStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-040:Vac-VVS-10000_Diag_Status\".\"VBP_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "VBP FDI input status")
+} 
+#VBP discrepancy error for valve
+record(bi, "DTL-040:Vac-VVS-10000:MPSVac-BPErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-040:Vac-VVS-10000_Diag_Status\".\"VBP_Discr_Error\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Discrepancy Error")
+    field(DESC, "VBP Discr.Err. FDI input")
+} 
+#VBP cable to valve
+record(bi, "DTL-040:Vac-VVS-10000:MPSVac-BPCableEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-040:Vac-VVS-10000_Diag_Status\".\"VBP_CblCnnct_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Connected")
+    field(ZNAM, "Not Connected")
+    field(DESC, "VBP Cable to valve")
+} 
+#VBP cable to valve status
+record(bi, "DTL-040:Vac-VVS-10000:MPSVac-BPCableStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-040:Vac-VVS-10000_Diag_Status\".\"VBP_CblCnnct_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "VBP cable connct FDI status")
+} 
+#Valve Masked 
+record(bi, "DTL-040:Vac-VVS-10000:MPSVac-MaskEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-040:Vac-VVS-10000_Diag_Status\".\"Masked_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "true")
+    field(ZNAM, "false")
+    field(DESC, "Valve Mask")
+} 
+#Valve is Downstream Beam Destination 
+record(bi, "DTL-040:Vac-VVS-10000:MPSVac-DwnStrmBDEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-040:Vac-VVS-10000_Diag_Status\".\"DownStream_BDest_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Downstream BD")
+    field(DESC, "Valve Downstream Beam Destination")
+} 
+
+
+#Valve DTL-050:Vac-VVS-10000
+#Open Switch
+record(bi, "DTL-050:Vac-VVS-10000:MPSVac-OpenSwitEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-050:Vac-VVS-10000_Diag_Status\".\"Open_SW_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Actuated")
+    field(ZNAM, "Not Actuated")
+    field(DESC, "Valve MPS Open Switch")
+}
+#Closed Switch
+record(bi, "DTL-050:Vac-VVS-10000:MPSVac-ClosedSwitEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-050:Vac-VVS-10000_Diag_Status\".\"Closed_SW_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Actuated")
+    field(ZNAM, "Not Actuated")
+    field(DESC, "Valve MPS Closed Switch")
+}
+#Open Switch Status
+record(bi, "DTL-050:Vac-VVS-10000:MPSVac-OpenSwitStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-050:Vac-VVS-10000_Diag_Status\".\"Open_SW_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deativated")
+    field(DESC, "Valve Open Switch FDI status")
+}
+#Close Switch Status
+record(bi, "DTL-050:Vac-VVS-10000:MPSVac-ClosedSwitStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-050:Vac-VVS-10000_Diag_Status\".\"Closed_SW_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "Valve Close Switch FDI status")
+}
+#Open Switch Discrepancy Error
+record(bi, "DTL-050:Vac-VVS-10000:MPSVac-OpenSwitErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-050:Vac-VVS-10000_Diag_Status\".\"Open_SW_Discr_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Error")
+    field(DESC, "Valve Open Switch Disc. Err.")
+} 
+#Close Switch Discrepancy Error
+record(bi, "DTL-050:Vac-VVS-10000:MPSVac-ClosedSwitErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-050:Vac-VVS-10000_Diag_Status\".\"Closed_SW_Discr_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Error")
+    field(DESC, "Valve Close Switch Disc. Err.")
+}
+#Valve Open State
+record(bi, "DTL-050:Vac-VVS-10000:MPSVac-OpenEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-050:Vac-VVS-10000_Diag_Status\".\"Open_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Opened")
+    field(DESC, "V.Op.Swt.Act./Clos.Swt.Unact.")
+} 
+#Valve Closed State
+record(bi, "DTL-050:Vac-VVS-10000:MPSVac-CloseEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-050:Vac-VVS-10000_Diag_Status\".\"Closed_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Closed")
+    field(DESC, "V.Cl.Swt.Act./Op.Swt.Unact.")
+} 
+#Valve Error State
+record(bi, "DTL-050:Vac-VVS-10000:MPSVac-OpenCloseErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-050:Vac-VVS-10000_Diag_Status\".\"Open_Closed_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Position Error")
+    field(DESC, "V.Err.State on switches")
+} 
+#Cable connect for open/close switches
+record(bi, "DTL-050:Vac-VVS-10000:MPSVac-SwitCableEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-050:Vac-VVS-10000_Diag_Status\".\"Open_Closed_SW_CblCnnct_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Connected")
+    field(ZNAM, "Not Connected")
+    field(DESC, "Cable connct. Swts")
+} 
+#Cable connect for open/close switches channel status
+record(bi, "DTL-050:Vac-VVS-10000:MPSVac-SwitCableStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-050:Vac-VVS-10000_Diag_Status\".\"Open_Closed_SW_CblCnnct_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "Cable connct. Swts FDI Status")
+} 
+#VBP from vacuum controls to MPSVac
+record(bi, "DTL-050:Vac-VVS-10000:MPSVac-BPEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-050:Vac-VVS-10000_Diag_Status\".\"VBP_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Ok")
+    field(ZNAM, "Not Ok")
+    field(DESC, "VBP from LPS")
+} 
+#VBP input channel status for valve
+record(bi, "DTL-050:Vac-VVS-10000:MPSVac-BPStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-050:Vac-VVS-10000_Diag_Status\".\"VBP_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "VBP FDI input status")
+} 
+#VBP discrepancy error for valve
+record(bi, "DTL-050:Vac-VVS-10000:MPSVac-BPErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-050:Vac-VVS-10000_Diag_Status\".\"VBP_Discr_Error\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Discrepancy Error")
+    field(DESC, "VBP Discr.Err. FDI input")
+} 
+#VBP cable to valve
+record(bi, "DTL-050:Vac-VVS-10000:MPSVac-BPCableEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-050:Vac-VVS-10000_Diag_Status\".\"VBP_CblCnnct_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Connected")
+    field(ZNAM, "Not Connected")
+    field(DESC, "VBP Cable to valve")
+} 
+#VBP cable to valve status
+record(bi, "DTL-050:Vac-VVS-10000:MPSVac-BPCableStat")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-050:Vac-VVS-10000_Diag_Status\".\"VBP_CblCnnct_CHStatus\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valid")
+    field(ZNAM, "Failsafe/Deactivated")
+    field(DESC, "VBP cable connct FDI status")
+} 
+#Valve Masked 
+record(bi, "DTL-050:Vac-VVS-10000:MPSVac-MaskEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-050:Vac-VVS-10000_Diag_Status\".\"Masked_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "true")
+    field(ZNAM, "false")
+    field(DESC, "Valve Mask")
+} 
+#Valve is Downstream Beam Destination 
+record(bi, "DTL-050:Vac-VVS-10000:MPSVac-DwnStrmBDEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbValves\".\"DTL-050:Vac-VVS-10000_Diag_Status\".\"DownStream_BDest_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Valve Downstream BD")
+    field(DESC, "Valve Downstream Beam Destination")
+} 
+
+
+
+
+
+
+
+
+
+
+
+

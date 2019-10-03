@@ -1,0 +1,146 @@
+#MPSVac State Machine monitoring 
+#MPSVac SM States
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-SmStartUp")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbState_Machine\".\"MPSVac_EPICS:StateMachine_Val\".\"Startup\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Start-Up")
+    field(DESC, "Start-Up state of MPSVac SM")
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-SmAttArm")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbState_Machine\".\"MPSVac_EPICS:StateMachine_Val\".\"Attempting_Arm\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Attempting Arm")
+    field(DESC, "Attmp. Arm state of MPSVac SM")
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-SmArm")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbState_Machine\".\"MPSVac_EPICS:StateMachine_Val\".\"Armed\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Armed")
+    field(DESC, "Armed state of MPSVac SM")   
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-SmILck")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbState_Machine\".\"MPSVac_EPICS:StateMachine_Val\".\"Interlocks\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Interlocked")
+    field(DESC, "Interlocks state of MPSVac SM")   
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-SmReconf")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbState_Machine\".\"MPSVac_EPICS:StateMachine_Val\".\"Machine_Reconfiguration\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Machine Reconf.")
+    field(DESC, "M.Reconf. state of MPSVac SM")   
+}
+
+#MPSVac SM Transitions
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-SmSt1")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbState_Machine\".\"MPSVac_EPICS:StateMachine_Val\".\"ST1\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Start-Up-->Att.Arm")
+    field(DESC, "MPSVac Trn. Start-Up->Att.Arm")   
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-SmAt1")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbState_Machine\".\"MPSVac_EPICS:StateMachine_Val\".\"AT1\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Att.Arm-->Armed")
+    field(DESC, "MPSVac Trn. Att.Arm->Arm")   
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-SmAt2")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbState_Machine\".\"MPSVac_EPICS:StateMachine_Val\".\"AT2\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Att.Arm-->Start-Up")
+    field(DESC, "MPSVac Trn. Att.Arm->Start-Up")   
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-SmAr1")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbState_Machine\".\"MPSVac_EPICS:StateMachine_Val\".\"AR1\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Armed-->Interlocks")
+    field(DESC, "MPSVac Trn. Arm->Interlocks")   
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-SmAr2")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbState_Machine\".\"MPSVac_EPICS:StateMachine_Val\".\"AR2\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Armed-->Mach.Reconf")
+    field(DESC, "MPSVac Trn. Armed->M.Rcfg")   
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-SmAr3")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbState_Machine\".\"MPSVac_EPICS:StateMachine_Val\".\"AR3\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Armed-->Start-Up")
+    field(DESC, "MPSVac Trn. Armed->Start-Up")   
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-SmIn1")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbState_Machine\".\"MPSVac_EPICS:StateMachine_Val\".\"IN1\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Interlocks-->Att.Arm")
+    field(DESC, "MPSVac Trn. Intlck->Att.Arm")   
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-SmIn2")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbState_Machine\".\"MPSVac_EPICS:StateMachine_Val\".\"IN2\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Interlocks-->Start-Up")
+    field(DESC, "MPSVac Trn. Intlck->Strt-Up")   
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-SmC1")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbState_Machine\".\"MPSVac_EPICS:StateMachine_Val\".\"C1\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "M.Recfg.-->Armed")
+    field(DESC, "MPSVac Trn. M.Recfg->Armed")   
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-SmC2")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbState_Machine\".\"MPSVac_EPICS:StateMachine_Val\".\"C2\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "M.Recfg.-->Start-Up")
+    field(DESC, "MPSVac Trn. M.Recfg->Start-Up")   
+}
+
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-SmC3")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbState_Machine\".\"MPSVac_EPICS:StateMachine_Val\".\"C3\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "M.Recfg.-->Intlck")
+    field(DESC, "MPSVac Trn. M.Recfg->Intlck")   
+}

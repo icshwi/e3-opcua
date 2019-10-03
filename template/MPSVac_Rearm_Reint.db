@@ -1,0 +1,54 @@
+#MPSVac Rearming and Reintegration 
+#From EPICS to MPSVac
+#After 2 seconds the Reaming and Reintegration actions reset automatically (button behaviour)
+record(bo, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-CmdReint")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbRearm_Reint_States\".\"EPICS_MPSVac:Reint_Req\"")    
+    field(ONAM, "Reintegrating MPSVac")
+    field(HIGH, "2")
+    field(DESC, "Reintegration button of MPSVac")
+}
+record(bo, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-CmdRearm")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbRearm_Reint_States\".\"EPICS_MPSVac:Rearm_Req\"")    
+    field(ONAM, "Rearming MPSVac")
+    field(HIGH, "2")
+    field(DESC, "Rearming button of MPSVac")
+}
+
+#From MPSVac to EPICS
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-ReintStatR")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbRearm_Reint_States\".\"MPSVac_EPICS:AckReq_Status\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "All FIO Ok (reint.)")
+    field(ZNAM, "Any FIO Pass.")
+    field(DESC, "Reintegration status of MPSVac")
+}
+record(ai, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-OpStatVal")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbRearm_Reint_States\".\"MPSVac_EPICS:OPState_Val\"")
+    field(SCAN, "I/O Intr")
+    field(DESC, "Operational State of MPSVac")
+}
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-IOErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbRearm_Reint_States\".\"MPSVac_EPICS:IO_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "Err. on any module")    
+    field(DESC, "Err. on Any module MPSVac")
+}
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-FRQsErr")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbRearm_Reint_States\".\"MPSVac_EPICS:FBIS_FRQs_FdBack_Err\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "FBck.Err. FRQs")    
+    field(DESC, "FBck.Err. FRQs MPSVac")
+}
+

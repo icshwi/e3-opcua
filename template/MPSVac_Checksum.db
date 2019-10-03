@@ -1,0 +1,132 @@
+#MPSVac versioning through Checksums: Failsafe and Standard (4 words each). A version is composed by both checksums
+#From EPICS to MPSVac: Operations choose the version to run (MPSVac PLC version should match)
+#Failsafe Checksum
+record(ao, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-FSChkSumW1")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbChekSum\".\"EPICS_MPSVac:ChkSum_Req\".\"FS_Word1_Val\"")
+    field(DESC, "Checksum Word 1 Failsafe")
+}
+record(ao, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-FSChkSumW2")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbChekSum\".\"EPICS_MPSVac:ChkSum_Req\".\"FS_Word2_Val\"")
+    field(DESC, "Checksum Word 2 Failsafe")
+}
+record(ao, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-FSChkSumW3")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbChekSum\".\"EPICS_MPSVac:ChkSum_Req\".\"FS_Word3_Val\"")
+    field(DESC, "Checksum Word 3 Failsafe")
+}
+record(ao, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-FSChkSumW4")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbChekSum\".\"EPICS_MPSVac:ChkSum_Req\".\"FS_Word4_Val\"")
+    field(DESC, "Checksum Word 4 Failsafe")
+}
+#Standard Checksum
+record(ao, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-StdChkSumW1")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbChekSum\".\"EPICS_MPSVac:ChkSum_Req\".\"STD_Word1_Val\"")
+    field(DESC, "Checksum Word 1 Standard")
+}
+record(ao, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-StdChkSumW2")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbChekSum\".\"EPICS_MPSVac:ChkSum_Req\".\"STD_Word2_Val\"")
+    field(DESC, "Checksum Word 2 Standard")
+}
+record(ao, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-StdChkSumW3")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbChekSum\".\"EPICS_MPSVac:ChkSum_Req\".\"STD_Word3_Val\"")
+    field(DESC, "Checksum Word 3 Standard")
+}
+record(ao, "MPSoS-MPSVac:Ctrl-IOC-001:MPSVac-StdChkSumW4")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=3;s=\"dbChekSum\".\"EPICS_MPSVac:ChkSum_Req\".\"STD_Word4_Val\"")
+    field(DESC, "Checksum Word 4 Standard")
+}
+
+#From MPSVac to EPICS: Configured Checksum Hashes
+#Configured Failsafe Checksum from MPSVac PLC
+record(ai, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-FsChkSumW1R")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbChekSum\".\"MPSVac_EPICS:ChkSum\".\"FS_Word1_Val\"")
+    field(SCAN, "I/O Intr")    
+    field(DESC, "MPSVac Conf. FSChkSum W1")
+}
+record(ai, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-FsChkSumW2R")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbChekSum\".\"MPSVac_EPICS:ChkSum\".\"FS_Word2_Val\"")
+    field(SCAN, "I/O Intr")    
+    field(DESC, "MPSVac Conf. FSChkSum W2")
+}
+record(ai, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-FsChkSumW3R")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbChekSum\".\"MPSVac_EPICS:ChkSum\".\"FS_Word3_Val\"")
+    field(SCAN, "I/O Intr")    
+    field(DESC, "MPSVac Conf. FSChkSum W3")
+}
+record(ai, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-FsChkSumW4R")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbChekSum\".\"MPSVac_EPICS:ChkSum\".\"FS_Word4_Val\"")
+    field(SCAN, "I/O Intr")    
+    field(DESC, "MPSVac Conf. FSChkSum W4")
+}
+
+#Configured Standard Checksum from MPSVac PLC
+record(ai, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-StdChkSumW1R")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbChekSum\".\"MPSVac_EPICS:ChkSum\".\"STD_Word1_Val\"")
+    field(SCAN, "I/O Intr")    
+    field(DESC, "MPSVac Conf.STDChkSum W1")
+}
+record(ai, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-StdChkSumW2R")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbChekSum\".\"MPSVac_EPICS:ChkSum\".\"STD_Word2_Val\"")
+    field(SCAN, "I/O Intr")    
+    field(DESC, "MPSVac Conf.STDChkSum W2")
+}
+record(ai, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-StdChkSumW3R")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbChekSum\".\"MPSVac_EPICS:ChkSum\".\"STD_Word3_Val\"")
+    field(SCAN, "I/O Intr")    
+    field(DESC, "MPSVac Conf.STDChkSum W3")
+}
+record(ai, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-StdChkSumW4R")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbChekSum\".\"MPSVac_EPICS:ChkSum\".\"STD_Word4_Val\"")
+    field(SCAN, "I/O Intr")    
+    field(DESC, "MPSVac Conf.STDChkSum W4")
+}
+#Checksum Evaluation (comparison between configured and requested) at the PLC side. Outcome read by EPICS
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-FsChkSumEvalEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbChekSum\".\"MPSVac_EPICS:ChkSum_FS_Eval_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "FS ChkSum Eval.Ok")
+    field(ZNAM, "FS ChkSum Eval.NOk")
+    field(DESC, "MPSVac FS ChkSum Evaluation")
+}
+record(bi, "MPSoS-MPSVac:Ctrl-PLC-001:MPSVac-StdChkSumEvalEn")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=3;s=\"dbChekSum\".\"MPSVac_EPICS:ChkSum_STD_Eval_Enbld\"")
+    field(SCAN, "I/O Intr")
+    field(ONAM, "STD ChkSum Eval.Ok")
+    field(ZNAM, "STD ChkSum Eval.NOk")
+    field(DESC, "MPSVac STD ChkSum Evaluation")
+}
