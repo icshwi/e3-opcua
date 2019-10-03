@@ -1,0 +1,16 @@
+
+global {SUBS=$(SUBS), P=$(P), R=$(R)}
+
+
+file "MPSVac_Checksums.template" {
+pattern { S, FIELD, SUBFIELD}
+{ "MPSVac-FSChkSumW1",  "EPICS_MPSVac:ChkSum_Req", "FS_Word1_Val"}
+{ "MPSVac-FSChkSumW2",  "EPICS_MPSVac:ChkSum_Req", "FS_Word2_Val"}
+{ "MPSVac-FSChkSumW3",  "EPICS_MPSVac:ChkSum_Req", "FS_Word3_Val"}
+{ "MPSVac-FSChkSumW4",  "EPICS_MPSVac:ChkSum_Req", "FS_Word4_Val"}
+{ "MPSVac-StdChkSumW1", "EPICS_MPSVac:ChkSum_Req", "STD_Word1_Val"}
+{ "MPSVac-StdChkSumW2", "EPICS_MPSVac:ChkSum_Req", "STD_Word2_Val"}
+{ "MPSVac-StdChkSumW3", "EPICS_MPSVac:ChkSum_Req", "STD_Word3_Val"}
+{ "MPSVac-StdChkSumW4", "EPICS_MPSVac:ChkSum_Req", "STD_Word4_Val"}
+}
+
