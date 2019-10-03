@@ -1,0 +1,51 @@
+# opc.tcp://milo.digitalpetri.com:62541/milo
+# UAOPC3:ServerBuildDate         2019-08-10T02:54:49.791Z
+# UAOPC3:ServerBuildNumber       dev
+# UAOPC3:ServerManufacturerName  Industrial Softworks
+# UAOPC3:ServerProductName       Eclipse Milo OPC UA Demo Server
+# UAOPC3:ServerSoftwareVersion   dev
+# UAOPC3:ServerStartTime         2019-08-10T02:54:53.315Z
+# 
+# Server information
+# Macros:
+# P     device prefix
+# R     device suffix
+# SESS  session name
+
+# dynamic information (read on subscription)
+# ROOT/Objects/Dynamic
+#
+
+record(ai, "$(P)$(R)Dynamic_RandomDobule-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=2;s=Dynamic/RandomDouble")
+    field(SCAN, "I/O Intr")
+}
+
+
+record(ai, "$(P)$(R)Dynamic_RandomFloat-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=2;s=Dynamic/RandomFloat")
+    field(SCAN, "I/O Intr")
+}
+
+# Datatype : Int16
+record(longin, "$(P)$(R)Dynamic_RandomInt32-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS)  ns=2;s=Dynamic/RandomInt32")
+    field(SCAN, "I/O Intr")
+}
+
+
+
+# Datatype : UInt16
+record(int64in, "$(P)$(R)Dynamic_RandomInt64-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS)  ns=2;s=Dynamic/RandomInt64")
+    field(SCAN, "I/O Intr")
+}
+

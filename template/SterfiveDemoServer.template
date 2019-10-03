@@ -1,0 +1,49 @@
+# opc.tcp://opcuademo.sterfive.com:26543
+# UAOPC4:ServerBuildDate         2019-10-03T03:18:48.247Z
+# UAOPC4:ServerBuildNumber       1234
+# UAOPC4:ServerManufacturerName  Node-OPCUA : MIT Licence ( see http://n
+# UAOPC4:ServerProductName       NODEOPCUA-SERVER
+# UAOPC4:ServerSoftwareVersion   2.0.0
+# Server information
+# Macros:
+# P     device prefix
+# R     device suffix
+# SESS  session name
+
+# dynamic information (read on subscription)
+# Root/Objects/MyDevices
+#
+record(ai, "$(P)$(R)FanSpeed-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=1;s=FanSpeed")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)Pressure-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=1;s=Pressure")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)PumpSpeed-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=1;s=PumpSpeed")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)SomeDate-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=1;s=SomeDate")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)Temperature-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=1;s=Temperature")
+    field(SCAN, "I/O Intr")
+}

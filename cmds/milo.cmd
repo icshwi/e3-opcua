@@ -15,11 +15,7 @@ epicsEnvSet("PORT", "62541/milo")
 
 iocshLoad("$(TOP)/iocsh/opcua.iocsh", "P=$(SESSION):,SESS=$(SESSION),SUBS=$(SUBSCRIPT),INET=$(OPCSERVER), PORT=$(PORT), DEBUG=5, SUBSDEBUG=0")
 
-
-dbLoadRecords("$(TOP)/template/opcuaServerStatus.template",   "P=$(SESSION):,R=,SESS=$(SESSION),SUBS=$(SUBSCRIPT)")
-#dbLoadRecords("$(TOP)/template/opcuaServerStats.template",  "P=$(SESSION):,R=,SESS=$(SESSION),SUBS=$(SUBSCRIPT)")
-
-#dbLoadRecords("$(TOP)/template/UaOpcUaAnsiCDemoServer.template", "P=OPC:,R=Demo:,SESS=$(SESSION),SUBS=$(SUBSCRIPT)")
+#dbLoadRecords("$(TOP)/template/MiloDigitalPetriDemoServer.template", "P=OPC:,R=Demo:,SESS=$(SESSION),SUBS=$(SUBSCRIPT)")
 
 
 iocInit()

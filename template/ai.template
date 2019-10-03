@@ -1,0 +1,14 @@
+# P     device prefix
+# R     device suffix
+# SESS  session name
+# NAME  Signal name
+# NSI   NodeId Namespace Index (n=)
+# IDENT NodeId Identifier (s=)
+
+record(ai, "$(P)$(R)$(NAME)-RB")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) ns=$(NSI=1);s=$(IDENT=$(NAME))")
+    field(SCAN, "I/O Intr")
+}
+
