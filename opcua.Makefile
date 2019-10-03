@@ -167,8 +167,9 @@ SCRIPTS += $(wildcard ../iocsh/*.iocsh)
 USR_DBFLAGS += -I . -I ..
 USR_DBFLAGS += -I $(EPICS_BASE)/db
 USR_DBFLAGS += -I $(EXAMPLEDB)
+USR_DBFLAGS += -I ../template
 
-SUBS=$(wildcard $(EXAMPLEDB)/*.substitutions)
+SUBS=$(wildcard $(EXAMPLEDB)/*-ess.substitutions)
 #TMPS=$(wildcard $(APPDB)/*.template)
 TMPS=
 

@@ -1,0 +1,57 @@
+# OPC UA Generic Server (namespace 0)
+# Server information
+
+# Macros:
+# P     device prefix
+# R     device suffix
+# SUBS  subscription name
+
+# static information (always read when connecting)
+# build information
+
+
+record(stringin, "$(P)$(R)ServerBuildDate")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) i=2266")
+}
+
+record(stringin, "$(P)$(R)ServerBuildNumber")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) i=2265")
+}
+
+record(stringin, "$(P)$(R)ServerManufacturerName")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) i=2263")
+}
+
+record(stringin, "$(P)$(R)ServerProductName")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) i=2261")
+}
+
+record(stringin, "$(P)$(R)ServerSoftwareVersion")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) i=2264")
+}
+
+record(stringin, "$(P)$(R)ServerStartTime")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) i=2257")
+}
+
+# dynamicinformation (read on subscription)
+record(stringin, "$(P)$(R)ServerCurrentTime")
+{
+    field(DTYP, "OPCUA")
+    field( INP, "@$(SUBS) i=2258")
+    field(SCAN, "I/O Intr")
+}
+
+

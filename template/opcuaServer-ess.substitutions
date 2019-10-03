@@ -1,0 +1,5 @@
+file "opcuaServerStatus.template"
+{
+  pattern { P, R, SESS, SUBS }
+          { "$(PREF)", "$(REC=)", "$(SESSION)", "$(SUBSCRIPT)" }
+}
