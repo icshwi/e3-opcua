@@ -7,7 +7,7 @@ epicsEnvSet("IOCNAME",    "UAOPC")
 #
 epicsEnvSet("SESSION1",   "$(IOCNAME)1")
 epicsEnvSet("SUBSCRIPT1", "SUB1")
-epicsEnvSet("OPCSERVER1", "127.0.0.1")
+epicsEnvSet("OPCSERVER1", "10.0.7.202")
 epicsEnvSet("PORT1", "48020")
 iocshLoad("$(opcua_DIR)/opcua.iocsh", "P=$(SESSION1):,SESS=$(SESSION1),SUBS=$(SUBSCRIPT1),INET=$(OPCSERVER1), PORT=$(PORT1), DEBUG=0, SUBSDEBUG=0")
 dbLoadRecords("$(TOP)/template/UaOpcUaAnsiCDemoServer.template", "P=$(SESSION1):,R=Demo:,SESS=$(SESSION1),SUBS=$(SUBSCRIPT1)")
