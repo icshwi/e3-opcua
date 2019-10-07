@@ -20,6 +20,18 @@ ESS Site-specific EPICS module : opcua
 apt install libssl-dev  libxml2-dev  cmake
 ```
 
+* CentOS 
+```
+yum install cmake3 libxml2-devel openssl-devel
+```
+
+  Check where cmake3 is, and create a symbolic link in `${HOME}`, and add PATH in `.bashrc`
+```
+which cmake3
+ln -s /usr/bin/cmake3 ~/bin/cmake
+export PATH=~/bin:$PATH
+```
+
 * Build SDK with SHARED_LIBS
 ```
 UASDK $ ./buildSdk.sh -s ON
