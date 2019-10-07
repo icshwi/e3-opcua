@@ -17,8 +17,8 @@
 # 
 # Author  : Jeong Han Lee
 # email   : jeonghan.lee@gmail.com
-# Date    : Tuesday, October  1 23:48:57 CEST 2019
-# version : 0.4.3
+# Date    : Monday, October  7 12:19:55 CEST 2019
+# version : 0.4.4
 #
 
 ## The following lines are mandatory, please don't change them.
@@ -79,8 +79,8 @@ TEMPLATES += $(wildcard $(EXAMPLEDB)/*.db)
 
 ifeq ($(T_A),linux-x86_64)
 USR_LDFLAGS += -Wl,--enable-new-dtags
-USR_LDFLAGS += -Wl,-rpath=$(E3_MODULES_VENDOR_LIBS_LOCATION)
 USR_LDFLAGS += -L$(E3_MODULES_VENDOR_LIBS_LOCATION)
+USR_LDFLAGS += -Wl,-rpath,"\$$ORIGIN/../../../../../siteLibs/vendor/$(E3_MODULE_NAME)/$(E3_MODULE_VERSION)"
 LIB_SYS_LIBS += $(UASDK_LIBS)
 endif
 
