@@ -17,7 +17,7 @@ epicsEnvSet("SESSION2",   "$(IOCNAME)2")
 epicsEnvSet("SUBSCRIPT2", "SUB2")
 epicsEnvSet("OPCSERVER2", "opcua.rocks")
 epicsEnvSet("PORT2",      "4840")
-iocshLoad("$(opcua_DIR)/opcua.iocsh", "P=$(SESSION2):,SESS=$(SESSION2),SUBS=$(SUBSCRIPT2),INET=$(OPCSERVER2), PORT=$(PORT2), DEBUG=0, SUBSDEBUG=0")
+iocshLoad("$(opcua_DIR)/opcua.iocsh", "P=$(SESSION2):,SESS=$(SESSION2),SUBS=$(SUBSCRIPT2),INET=$(OPCSERVER2), PORT=$(PORT2), DEBUG=5, SUBSDEBUG=0")
 
 #
 epicsEnvSet("SESSION3",   "$(IOCNAME)3")

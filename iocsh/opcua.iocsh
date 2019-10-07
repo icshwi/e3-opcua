@@ -17,6 +17,6 @@
 #- ####################################################
 
 opcuaCreateSession "$(SESS)" "opc.tcp://$(INET):$(PORT=48020)" "$(DEBUG=0)" "$(AUTOCONNECT=y)"
-opcuaCreateSubscription "$(SUBS)" "$(SESS)" "$(SUBSTIME=200)" "$(SUBPRIO=0)" "$(SUBSDEBUG=0)"
+opcuaCreateSubscription "$(SUBS)" "$(SESS)" "$(SUBSTIME=100)" "$(SUBPRIO=0)" "$(SUBSDEBUG=0)"
 
 dbLoadRecords("opcuaServer-ess.db",   "PREF=$(P),SESSION=$(SESS),SUBSCRIPT=$(SUBS)")
