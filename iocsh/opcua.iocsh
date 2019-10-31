@@ -10,13 +10,19 @@
 #- DEBUG          - SESSION initial level of debuggging, Default : 0
 #- AUTOCONNECT    - Automatically connect/reconnect to server, Default : y
 #-                  True : YyTt      False : NnFf
-#- SUBSTIME       - SUBSCRIPTION Interval, Default : 200 ms
+#- BATCHNODES     - The maximum number of operations used in a Service call.
+#-                  nMaxOperationsPerServiceCall in UA SDK, Default : 1000
+#-                  Currently, 1000 is the maximum value for Simens PLC
+#- SUBSTIME       - SUBSCRIPTION Interval, Default : 100 ms
 #- SUBSPRIO       - SUBSCRIPTION Priority, Default : 0 (lowest) [0..255]
 #- SUBSDEBUG      - SUBSCRIPTION DEBUG (0:off, positive number:on), Default : 0
 #- R              - Database next prefix, Default : not defined
 #- ####################################################
 
 opcuaCreateSession "$(SESS)" "opc.tcp://$(INET):$(PORT=48020)" "$(DEBUG=0)" "$(AUTOCONNECT=y)"
+
+opcuaSetOption "$(SESS)" "batch-nodes" "$(BATCHNODES=1000)"
+
 opcuaCreateSubscription "$(SUBS)" "$(SESS)" "$(SUBSTIME=100)" "$(SUBPRIO=0)" "$(SUBSDEBUG=0)"
 
 dbLoadRecords("opcuaServer-ess.db",   "PREF=$(P),SESSION=$(SESS),SUBSCRIPT=$(SUBS)")
